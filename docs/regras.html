@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regras · SATUS</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css?v=4">
+</head>
+<body data-theme="trindade">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="index.html" class="">Portal</a>
+    <a href="mundo.html" class="">Mundo</a>
+    <a href="codex.html" class="">Códex</a>
+    <a href="regras.html" class="on">Regras</a>
+    <a href="cacadores.html" class="">Caçadores</a>
+    
+      <a href="conhecimento.html" class="navlink " data-c="conh">
+        Conhecimento
+      </a>
+    
+      <a href="exploracao.html" class="navlink " data-c="expl">
+        Exploração
+      </a>
+    
+      <a href="administracao.html" class="navlink " data-c="adm">
+        Administração
+      </a>
+    
+    <a href="mestre.html" class="navlink navlink-mestre ">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>
+<div class="classhead">
+  <div class="watermark"><svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+  <div class="inner wrap">
+    <svg class="seal-main etch" data-seal="trindade" viewBox="0 0 300 300" aria-label="Selo da Trindade"></svg>
+    <div class="clearance ok">MANUAL · AS CORES E O NEN</div>
+    <h2>Regras</h2>
+    <p class="role">As Cores, o Domínio de Nen e as Categorias</p>
+  </div>
+</div>
+<div class="worldlore wrap" style="margin-top:22px">
+  
+  <details class="lore-region"><summary>As Cores</summary><div class="lore-body">
+<p>O Nen e o Hatsu nascem do corpo. As Cores nascem da alma. Elas têm três graus, do menor ao maior: <b>Despertado</b>, <b>Treinado</b> e <b>Mestre</b>. Os passivos ficam sempre ligados de graça; os efeitos ativos custam reações, da poça de 7+SAB, e aura.</p>
+<table class="restab"><thead><tr><th>Grau</th><th>Custo por ativação na rodada</th></tr></thead>
+<tbody><tr><td><b>Despertado</b></td><td>1 reação + 5% de aura</td></tr><tr><td><b>Treinado</b></td><td>2 reações + 10% de aura</td></tr><tr><td><b>Mestre</b></td><td>3 reações + 15% de aura</td></tr></tbody></table>
+<p>Os efeitos mais poderosos têm um limite de usos por descanso, ligado ao modificador de SAB (Observação e Armamento) ou de CAR (Conquistador).</p>
+
+<h4>Observação</h4>
+<p><em>A Cor de quem enxerga além dos olhos. Não vê o corpo, vê a presença, a intenção e o peso do poder alheio, e no seu ápice já leu o golpe antes de a mão do inimigo se mover.</em></p>
+<p><b>Despertado.</b> Proficiência +5 em Percepção e Intuição, não pode ser surpreendido, +5 de iniciativa.</p>
+<p><b>Treinado.</b> Detecta presenças a 12 m mesmo invisíveis; criaturas ocultas perdem a vantagem contra ele; por reação, impõe desvantagem a um ataque (usos por descanso = mod de SAB).</p>
+<p><b>Mestre.</b> Sente presença, intenção e nível de poder a 30 m; +5 de CA contra o 1º ataque de cada rodada; uma vez por descanso longo, prevê o turno inteiro de um inimigo, impondo desvantagem em tudo que ele fizer por 1 rodada.</p>
+
+<h4>Armamento</h4>
+<p><em>A Cor que reveste o corpo e a arma com a própria alma. Um soco comum vira uma força que fere o intangível, atravessa a resistência e mantém o guerreiro de pé mesmo depois de cair.</em></p>
+<p><b>Despertado.</b> Ação bônus: +1d12 no golpe e seus ataques passam a contar como mágicos (3 usos por descanso curto). O dado da Cor substitui o escalonamento por aura naquele mesmo golpe.</p>
+<p><b>Treinado.</b> +2d10 no golpe; por reação, assume CA igual ao mod de SAB durante (mod de SAB) rodadas.</p>
+<p><b>Mestre.</b> +3d10 no golpe e ignora resistências físicas e mágicas; por reação, reduz um dano à metade (1x por descanso curto); ao chegar a 0 PV, volta com 1 PV, uma vez por descanso longo. Não funciona contra o que desliga a alma, como a Cisma Etérea.</p>
+
+<h4>Conquistador</h4>
+<p><em>A Cor dos reis, a mais rara de todas. Não fere o corpo, dobra a vontade. É a pressão de uma alma tão vasta que o fraco desmaia só de senti-la.</em></p>
+<p><b>Despertado.</b> Proficiência +5 em Intimidação. Como ação, inimigos a 9 m fazem um TR de Sabedoria contra CD 8 + proficiência + CAR: na falha, ficam Amedrontados pela cena; num 1 natural, desmaiam.</p>
+<p><b>Treinado.</b> Alcance sobe para 18 m. Quem falhar por 5 ou mais fica com desvantagem contra ele por 1 minuto (usos = mod de CAR por descanso longo).</p>
+<p><b>Mestre.</b> Alcance 30 m. Escolhe 3 alvos que ignoram imunidade a medo; quem falhar por 5 ou mais fica Incapacitado por 1 minuto, com um save no fim de cada turno. Ação bônus, as Cores do Imperador: punho ou arma com +4d12 indivisível e irredutível, ou o corpo com +5 de CA por 1 rodada (custo temático: 1 de Sanidade por uso).</p>
+<p><b>Como se obtém.</b> O Conquistador é raríssimo: só alguns já nascem com ele, definido no dado da descoberta do Nen. Mas há um segundo caminho: ao atingir o valor máximo de 30 em qualquer atributo, o personagem ganha automaticamente as Cores do Conquistador.</p></div></details>
+  
+  <details class="lore-region"><summary>Domínio de Nen · Os Fundamentos</summary><div class="lore-body">
+<p>Antes de qualquer técnica, existem os quatro princípios que todo caçador aprende a dominar. Sobre eles se ergue tudo o mais.</p>
+
+<h4>Ten · a proteção</h4>
+<p><em>Envolver o corpo com a própria aura, como uma segunda pele. É o primeiro escudo, e o alicerce de toda defesa.</em></p>
+<p><b>Mesa.</b> Reação de Bloqueio mais 20% de aura e 1 reação: +1 de CA no Básico, +2 no Intermediário, +5 na Maestria (Reforçadores pagam menos: 10%, 5% e 10%). Dá redução de dano contra Impacto, Explosão e Queda. Na Maestria, ainda protege de Queimado, Atordoado por eletricidade e Molhado, e libera o Shu. Também corta a intimidação feita por aura.</p>
+
+<h4>Ren · o poder</h4>
+<p><em>Expandir a aura ao máximo, deixá-la ferver para fora do corpo. É a fonte de toda força ofensiva, e o rugido silencioso que anuncia um caçador de verdade.</em></p>
+<p><b>Mesa.</b> Ação bônus mais 5% de aura sobe o grau de dano do próximo golpe; ação principal para intimidar. O Intermediário (10%) abre o En; a Maestria abre o Gyo.</p>
+
+<h4>Zetsu · o silêncio</h4>
+<p><em>Fechar a aura por completo, apagar-se do mundo. Recupera as forças e some de qualquer radar, mas deixa o corpo indefeso.</em></p>
+<p><b>Mesa.</b> Mantido por 2 rodadas: +5% de aura, +1 reação e +3 de Furtividade no Básico, escalando até +10% de aura, +2 reações e +6 de Furtividade na Maestria. Quem é atingido por Nen enquanto está em Zetsu sofre dano crítico. O Intermediário abre o In e o Gyo; a Maestria oculta a presença até de criaturas não inteligentes.</p>
+
+<h4>Hatsu · a expressão</h4>
+<p><em>A técnica pessoal, a assinatura da alma de cada caçador. É onde a categoria de Nen e a história de vida se fundem num poder que ninguém mais no mundo tem igual.</em></p>
+<p><b>Mesa.</b> Cada Hatsu é construído em três níveis, Básico, Intermediário e Maestria, com custo em porcentagem de aura, alcance, duração e restrições. A regra de ouro: quanto mais abrangente e reproduzível o efeito, mais fraco ele é, e cada restrição que o caçador aceita reduz o custo. Um Hatsu fora da categoria dominante custa muito mais aura ou rende bem menos.</p></div></details>
+  
+  <details class="lore-region"><summary>Domínio de Nen · As Técnicas Avançadas</summary><div class="lore-body">
+<p>Dominados os fundamentos, abrem-se as sete técnicas avançadas. Cada uma exige o domínio de princípios anteriores, e juntas separam o caçador comum do mestre.</p>
+
+<h4>Gyo · o foco</h4>
+<p><em>Concentrar a aura numa só parte do corpo, afiando um sentido ou um golpe até o limite.</em></p>
+<p><b>Mesa.</b> Nos olhos, 10% de aura: +5 em Investigação e Percepção, e revela o que está oculto em In ou Zetsu. Em outra parte, 30%: +3 temporário em Força, Destreza ou Constituição, e o golpe passa a valer como Arma de Cerco. Requer Zetsu intermediário e Ren em Maestria.</p>
+
+<h4>En · o círculo</h4>
+<p><em>Expandir a aura numa esfera ao redor de si, sentindo tudo que entra no seu domínio como quem sente uma gota na pele.</em></p>
+<p><b>Mesa.</b> 10% de aura e 2 reações criam uma esfera de 3 m até o próximo turno; cada +3 m custa mais 10% e 2 reações. Quem entra na esfera provoca um ataque de reação. Requer Ren intermediário e Ten básico.</p>
+
+<h4>In · a ocultação</h4>
+<p><em>Esconder a própria aura, ou a de um objeto, tornando o invisível ainda mais invisível. A arma que o inimigo não vê chegar.</em></p>
+<p><b>Mesa.</b> 10% de aura oculta um item ou a própria aura até o próximo turno, visível apenas por Gyo. Ocultar materialização ou manipulação custa mais. Requer Zetsu intermediário.</p>
+
+<h4>Shu · a extensão</h4>
+<p><em>Estender a aura por um objeto, fazendo de qualquer coisa uma arma, e de qualquer arma algo quase indestrutível.</em></p>
+<p><b>Mesa.</b> 10% de aura: +1d4 de dano e de CA no item, que ainda ganha proteção contra efeitos físicos. Um item em Shu só se quebra por outro Shu, Ko ou Ryu maior. Requer Ten em Maestria.</p>
+
+<h4>Ken · a couraça</h4>
+<p><em>O Ten levado ao extremo: a aura como armadura total, envolvendo o corpo inteiro numa muralha viva.</em></p>
+<p><b>Mesa.</b> 4 reações e 30% de aura dobram a CA por 2 rodadas, com redução de dano contra Impacto, Explosão e Queda. Requer Ten e Ren em Maestria.</p>
+
+<h4>Ko · a lâmina</h4>
+<p><em>Reunir toda a aura num único ponto de ataque, abrindo mão de toda defesa por um golpe capaz de partir o que for.</em></p>
+<p><b>Mesa.</b> 30% de aura triplica o dano do golpe, mas derruba a própria CA em 80% até o próximo turno. Requer Ren e Zetsu em Maestria e Ten básico.</p>
+
+<h4>Ryu · o fluxo</h4>
+<p><em>O domínio supremo: transferir a aura livremente entre ataque e defesa, em tempo real, mil vezes num só instante.</em></p>
+<p><b>Mesa.</b> 30% de aura e 3 reações máximas gratuitas, que viram ataques extras com +3 de acerto e dano e +1 grau. Nos primeiros turnos, +3 de CA e reações extras; depois, o caçador distribui CA, reações e ataques como quiser. É o único princípio que concede vários contra-ataques por turno sem gastar a ação principal. Requer Ten, Ren e Zetsu em Maestria.</p></div></details>
+  
+  <details class="lore-region"><summary>As Categorias de Nen</summary><div class="lore-body">
+<p>Todo caçador nasce com uma afinidade dominante, revelada pela personalidade ou pelo dado da descoberta do Nen. Ela define o que ele faz de melhor, e o que sempre lhe custará mais caro.</p>
+<table class="restab"><thead><tr><th>1d100</th><th>Categoria</th></tr></thead>
+<tbody>
+<tr><td>01–18</td><td>Reforço</td></tr><tr><td>19–36</td><td>Transmutação</td></tr><tr><td>37–54</td><td>Conjuração</td></tr>
+<tr><td>55–72</td><td>Emissão</td></tr><tr><td>73–90</td><td>Manipulação</td></tr><tr><td>91–100</td><td>Especialização</td></tr>
+</tbody></table>
+<p>As categorias formam um círculo: cada uma aprende com mais facilidade as vizinhas, e com mais dificuldade a que lhe é oposta.</p>
+
+<h4>Reforço</h4><p><em>Fortalecer o próprio corpo e os próprios objetos.</em> A mais direta e resistente das categorias. <b>Passivo:</b> sobe 1 grau nos ataques ou dobra a proficiência em Atletismo e Constituição, e leva vantagem no Ten.</p>
+<h4>Transmutação</h4><p><em>Mudar as propriedades da aura, fazendo-a imitar outras coisas, da eletricidade à borracha.</em> <b>Passivo:</b> dobra a proficiência em Intuição, Enganação, Natureza e Arcanismo, com afinidade natural para In e Zetsu.</p>
+<h4>Conjuração</h4><p><em>Dar forma e existência real à aura, criando objetos que se pode tocar.</em> <b>Passivo:</b> dobra a proficiência em Intuição, História e Arcanismo, e conjura como ação bônus.</p>
+<h4>Emissão</h4><p><em>Separar a aura do corpo e projetá-la à distância sem que ela se dissipe.</em> <b>Passivo:</b> dispara aura no lugar do Ren numa arma, com afinidade para Shu e En.</p>
+<h4>Manipulação</h4><p><em>Controlar coisas, ou pessoas, dobrando-as à própria vontade pela aura.</em> <b>Passivo:</b> dobra a proficiência em Prestidigitação, Intuição, Enganação e Persuasão, com afinidade para Ren.</p>
+<h4>Especialização</h4><p><em>Tudo aquilo que foge às outras cinco, o inclassificável: roubar habilidades, alterar o tempo, dar vida ao inanimado.</em> A mais rara e imprevisível. <b>Passivo:</b> dobra a proficiência em três perícias à escolha.</p></div></details>
+  
+  <details class="lore-region"><summary>As Bênçãos dos Deuses</summary><div class="lore-body">
+<p>Os deuses de SATUS não são lenda. Eles observam, e um caçador que os corteja com fé pode ganhar deles uma dádiva. As Bênçãos funcionam no espírito de um paladino: quanto mais o personagem reza, visita templos e descobre verdades sobre uma divindade, mais alto sobe o seu nível de bênção com ela.</p>
+<h4>Como se conquista</h4><p>Três caminhos elevam a fé: a <b>oração</b> constante e sincera, a <b>peregrinação</b> aos templos daquele deus e a <b>descoberta</b> de segredos e relíquias ligados a ele. Cada avanço destrava um degrau de bênção. Consulte o Panteão, no Códex, para conhecer os domínios de cada divindade, porque a bênção sempre reflete aquilo que o deus governa.</p>
+<h4>Os Deuses Menores</h4><p>Os dezesseis Seres Antigos concedem bênçãos em degraus, temáticas ao seu domínio: o fiel de Ygniss ganha do fogo, o de Lyareth ganha da justiça, o de Jaci ganha da lua. São as dádivas mais acessíveis, e as que o caçador cultiva ao longo da vida.</p>
+<h4>Os Deuses Maiores</h4><p>Maalkahar e Elyndra concedem bênçãos maiores e raras, muito além das dos Menores. Mas nada vem de graça na mão de um Deus Maior: toda dádiva desse porte cobra um preço, e cabe ao caçador decidir se pode pagá-lo.</p>
+<h4>Gan não abençoa</h4><p>O Deus Superior não dá bênçãos. Gan <b>barganha</b>. Quem chega até ele não recebe um favor, e sim propõe uma troca, permanente e irreversível, algo de si em troca de algo do impossível. É o poder mais alto que um mortal pode tocar, e o mais perigoso.</p>
+<p><em>Os efeitos exatos de cada degrau de bênção, e o preço de cada barganha, são definidos entre o caçador e o Mestre.</em></p></div></details>
+  
+</div>
+<div class="foot">Manual público · Trindade<div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a></div></div>
+</main>
+<script src="static/js/seals.js?v=4"></script>
+<script src="static/js/site.js?v=4"></script>
+<script src="static/js/authdata.js?v=4"></script>
+<script src="static/js/auth.js?v=4"></script>
+
+</body>
+</html>

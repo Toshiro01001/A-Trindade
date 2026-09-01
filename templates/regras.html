@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block nav_regras %}on{% endblock %}
+{% block title %}Regras · SATUS{% endblock %}
+{% block main %}
+<div class="classhead">
+  <div class="watermark"><svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+  <div class="inner wrap">
+    <svg class="seal-main etch" data-seal="trindade" viewBox="0 0 300 300" aria-label="Selo da Trindade"></svg>
+    <div class="clearance ok">MANUAL · AS CORES E O NEN</div>
+    <h2>Regras</h2>
+    <p class="role">As Cores, o Domínio de Nen e as Categorias</p>
+  </div>
+</div>
+<div class="worldlore wrap" style="margin-top:22px">
+  {% for e in regras %}
+  <details class="lore-region"><summary>{{ e[0] }}</summary><div class="lore-body">{{ e[1]|safe }}</div></details>
+  {% endfor %}
+</div>
+<div class="foot">Manual público · Trindade<div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a></div></div>
+{% endblock %}

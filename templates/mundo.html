@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block nav_mundo %}on{% endblock %}
+{% block title %}Códex do Mundo · Mapa de SATUS{% endblock %}
+{% block main %}
+<div class="mapapp">
+  <svg id="map" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-label="Mapa de SATUS">
+    <defs>
+      <radialGradient id="ocean" cx="50%" cy="42%" r="75%">
+        <stop offset="0%" stop-color="#123244"/><stop offset="55%" stop-color="#0c2130"/><stop offset="100%" stop-color="#06131c"/>
+      </radialGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="1.1"/></filter>
+    </defs>
+    <rect id="oceanrect" x="-800" y="-500" width="3200" height="2000" fill="url(#ocean)"/>
+    <g id="viewport"></g>
+  </svg>
+
+  <!-- barra superior: busca -->
+  <div class="map-top">
+    <div class="searchbox">
+      <span class="mag">⌕</span>
+      <input id="search" type="text" placeholder="Buscar região, país ou cidade…" aria-label="Buscar no mapa" autocomplete="off">
+      <div id="results" class="results" role="listbox"></div>
+    </div>
+    <div class="map-title">CÓDEX DO MUNDO · SATUS</div>
+  </div>
+
+  <!-- controles -->
+  <div class="map-ctrl">
+    <button id="zin" title="Aproximar" aria-label="Aproximar">+</button>
+    <button id="zout" title="Afastar" aria-label="Afastar">−</button>
+    <button id="reset" title="Visão geral" aria-label="Visão geral">⌂</button>
+  </div>
+  <div class="compass" title="Norte">
+    <svg viewBox="0 0 60 60"><g stroke="currentColor" fill="currentColor">
+      <circle cx="30" cy="30" r="26" fill="none" stroke-width="1.4" opacity=".6"/>
+      <path d="M30 6 L36 30 L30 26 L24 30 Z" fill="currentColor"/>
+      <path d="M30 54 L24 30 L30 34 L36 30 Z" fill="none" stroke-width="1"/>
+      <text x="30" y="20" text-anchor="middle" font-size="9" stroke="none">N</text>
+    </g></svg>
+  </div>
+
+  <!-- legenda -->
+  <div class="legend">
+    <div class="lg-title">Camadas</div>
+    <label><input type="checkbox" id="tgLabels" checked> Rótulos</label>
+    <label><input type="checkbox" id="tgCities" checked> Cidades</label>
+    <label><input type="checkbox" id="tgIce" checked> Glacies Lied</label>
+    <label><input type="checkbox" id="tgLocais" checked> Locais</label>
+    <div class="lg-hint">Arraste para mover · role para dar zoom · clique numa região</div>
+  </div>
+
+  <!-- painel de informações -->
+  <aside id="panel" class="panel" aria-live="polite">
+    <button id="pclose" class="pclose" aria-label="Fechar">×</button>
+    <div id="pbody"></div>
+  </aside>
+
+  <div class="coords" id="coords">SATUS · 0,0</div>
+</div>
+
+<script id="geo" type="application/json">{{ geo|safe }}</script>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}

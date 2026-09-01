@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administração · Arquivo · Trindade</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css?v=4">
+</head>
+<body data-theme="adm">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="index.html" class="">Portal</a>
+    <a href="mundo.html" class="">Mundo</a>
+    <a href="codex.html" class="">Códex</a>
+    <a href="regras.html" class="">Regras</a>
+    <a href="cacadores.html" class="">Caçadores</a>
+    
+      <a href="conhecimento.html" class="navlink " data-c="conh">
+        Conhecimento
+      </a>
+    
+      <a href="exploracao.html" class="navlink " data-c="expl">
+        Exploração
+      </a>
+    
+      <a href="administracao.html" class="navlink on" data-c="adm">
+        Administração
+      </a>
+    
+    <a href="mestre.html" class="navlink navlink-mestre ">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>
+<script>window.CLASSE="administracao";</script>
+
+<!-- PORTÃO (some após a senha) -->
+<section class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="gate-seal locked" data-seal="adm" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <div class="clearance">ACESSO RESTRITO · CLASSE DE ADMINISTRAÇÃO</div>
+    <h2>Administração</h2>
+    <p class="role">O coração estratégico e político de SATUS</p>
+    <p class="gate-msg">Este arquivo é reservado aos caçadores da classe. Insira a senha fornecida pela Trindade.</p>
+    <div class="flash err" id="gateerr" role="alert"></div>
+    <form class="pwd-form" id="gateform" autocomplete="off">
+      <input type="password" id="gatepwd" placeholder="Senha da classe" aria-label="Senha da classe" required autofocus>
+      <button type="submit">Autenticar</button>
+    </form>
+    <a class="ghost-link" href="index.html">Voltar ao portal</a>
+  </div>
+</section>
+
+<!-- CONTEÚDO (revelado após a senha) -->
+<div id="classcontent" hidden>
+  <div class="classhead">
+    <div class="watermark"><svg data-seal="adm" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+    <div class="inner wrap">
+      <svg class="seal-main" data-seal="adm" viewBox="0 0 300 300" aria-label="Selo de Administração"></svg>
+      <div class="clearance ok">ACESSO CONCEDIDO · CLASSE DE ADMINISTRAÇÃO</div>
+      <h2>Administração</h2>
+      <p class="role">O coração estratégico e político de SATUS</p>
+      <div class="mandate"><p>Seus membros moldam os rumos do mundo como líderes, coordenadores e gestores de recursos, garantindo que cada engrenagem da Trindade funcione. Equilibram interesses conflitantes, promovem estabilidade e traçam estratégias para o avanço global. São, mais que burocratas, os arquitetos de um mundo coeso.</p></div>
+      <div class="patente-bar">
+        <span>Patente:</span>
+        <div class="stars" id="starform">
+          <button type="button" class="star" data-n="1" aria-label="1 estrelas">★</button><button type="button" class="star" data-n="2" aria-label="2 estrelas">★</button><button type="button" class="star" data-n="3" aria-label="3 estrelas">★</button><button type="button" class="star" data-n="4" aria-label="4 estrelas">★</button><button type="button" class="star" data-n="5" aria-label="5 estrelas">★</button>
+        </div>
+        <span class="patente-num">1★</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label wrap"><span>Privilégios e Regalias</span></div>
+  <div class="regs wrap">
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">1</span><span class="reg-title">Acesso à Governança Superior</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Caçadores de 4 estrelas ou mais têm assento garantido no Conselho Supremo das 3 Classes, decidindo os rumos estratégicos de SATUS.</li><li>Influência direta sobre políticas interclasses e globais, consultados em reformas legais e decisões estruturais.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">2</span><span class="reg-title">Controle sobre Recursos e Financiamento</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Supervisão da alocação de recursos financeiros, humanos e materiais em pesquisa, expedições e infraestrutura.</li><li>Acesso a fundos de contingência secretos, usados em situações críticas ou iniciativas discretas.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">3</span><span class="reg-title">Bônus em Poder Político e Econômico</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>A partir de 4 estrelas, bônus de influência política: negociação com governos e corporações sem intermediários.</li><li>Autoridade para criar ou reestruturar sistemas de tributos e redirecionar riquezas em crises.</li><li>Poder de barganha superior em qualquer negociação.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">4</span><span class="reg-title">Acesso Exclusivo a Informações Estratégicas</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Controle de relatórios confidenciais: dados econômicos, ameaças políticas e análises sociais.</li><li>Pode requisitar informações das outras classes, como mapas secretos da Exploração ou descobertas da classe de Conhecimento.</li><li>Decide o que é divulgado ou mantido em sigilo, regulando o fluxo de informação.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">5</span><span class="reg-title">Controle sobre Forças Militares e Segurança</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Pode mobilizar forças militares, unidades de segurança ou agentes especiais em caso de necessidade.</li><li>Coordena vigilância e monitoramento de regiões instáveis, neutralizando ameaças internas ou externas.</li><li>Acesso direto às unidades de elite da Trindade, para proteção de locais estratégicos ou missões de alto risco.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">6</span><span class="reg-title">Parcerias e Alianças Estratégicas</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Negocia tratados com nações, corporações ou facções poderosas, dentro e fora de SATUS.</li><li>Cria redes de aliança que promovem desenvolvimento econômico, militar e tecnológico global.</li><li>Os únicos com poder para estabelecer tratados intercontinentais em nome da Trindade.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">7</span><span class="reg-title">Proteção Legal e Imunidade</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Imunidade jurídica nas atividades exercidas dentro da Trindade.</li><li>Não podem ser processados por decisões tomadas no cumprimento de suas funções, salvo traição comprovada.</li><li>Protocolo de proteção prioritária, com segurança constante em tempos de crise.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">8</span><span class="reg-title">Responsabilidade pela Ordem e Equilíbrio</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Garante que as outras classes operem dentro de seus limites, evitando disputas internas ou abusos de poder.</li><li>Equilibra as necessidades da ciência, da exploração e da governança para um progresso harmonioso.</li><li>Atua como mediadora em conflitos entre classes ou regiões, restabelecendo a ordem.</li></ul></div>
+    </div>
+    
+  </div>
+
+  <div class="section-label wrap alt"><span>Recursos Privilegiados</span></div>
+  <div class="resources wrap">
+    
+    <section class="resource" data-minstars="4">
+      <header class="res-head">
+        <h3>Sala do Conselho Supremo</h3>
+        <p class="res-note">Requer patente 4★ ou superior.</p>
+        <span class="res-lock" style="display:none">⚿ requer 4★</span>
+      </header>
+      <div class="res-inner">
+      
+        <ul class="docs"><li class="doc "><span class="doc-t">Reforma tributária de Askar</span><span class="doc-b">Votação em aberto · 2 a favor, 1 contra</span></li><li class="doc "><span class="doc-t">Publicação do registro sobre o Continente Negro</span><span class="doc-b">Votação em aberto · selado até deliberação</span></li><li class="doc "><span class="doc-t">Mobilização de elite em zona instável</span><span class="doc-b">Aprovado · execução discreta</span></li></ul>
+      
+      </div>
+      <p class="res-denied" style="display:none">Conteúdo selado. Eleve sua patente para 4★ ou superior.</p>
+    </section>
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Fundos de Contingência</h3>
+        <p class="res-note">Valores mantidos em sigilo.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <ul class="docs"><li class="doc "><span class="doc-t">Reserva estratégica da Trindade</span><span class="doc-b">Contingência contra o Domínio Obscuro · uso restrito a crise declarada</span></li><li class="doc "><span class="doc-t">Iniciativas discretas</span><span class="doc-b">Destino: expedições ao Domínio Obscuro</span></li></ul>
+      
+      </div>
+      
+    </section>
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Relatórios Requisitáveis das Outras Classes</h3>
+        <p class="res-note">Fluxo de informação controlado pela Administração.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <ul class="reslist"><li>Mapas secretos da Classe de Exploração</li><li>Descobertas científicas da Classe de Conhecimento</li><li>Análises econômicas, políticas e sociais</li></ul>
+      
+      </div>
+      
+    </section>
+    
+  </div>
+
+  <div class="section-label wrap alt"><span>Arquivo do Mundo</span></div>
+  <div class="worldlore wrap">
+    
+    <details class="lore-region">
+      <summary>Askar · conflitos</summary>
+      <div class="lore-body">
+<h4>A questão Chronos</h4><p>A linhagem deposta da ampulheta não morreu de todo. Leais e pretendentes ainda fervem nas sombras, e muitos creem que os Silver roubaram o trono, o que de fato fizeram, pela traição de Draemon. Uma guerra civil fria que nunca esfria por completo.</p>
+<h4>A guerra pela informação</h4><p>O verdadeiro poder de Askar não está nos exércitos, e sim no que o mundo pode ver e saber. A Aurexis da Celene controla as imagens, a Vörsa da Engel controla a rede, a Hallström briga pelas telas e a Aethernet acumula os dados.</p>
+<h4>O ressentimento demográfico</h4><p>Xin-Hé tem o maior povo do planeta e sustenta o mundo com sua colheita, mas quem reina e enriquece é Astória e os Silver. A nação mais populosa não é a que usa a coroa, e isso é um barril de pólvora.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Azora · conflitos</summary>
+      <div class="lore-body">
+<h4>Um império grande demais</h4><p>A Verdânia reina sobre uma extensão vasta e selvagem, e o preço disso é conviver com revoltas de fronteira e regiões de selva que ela nunca controlou de fato.</p>
+<h4>Verdânia contra Eisenland</h4><p>O trópico expansivo contra o ferro disciplinado. A rivalidade entre o império caloroso que cresce sem parar e a nação industrial que preza a ordem acima de tudo.</p>
+<h4>A guarda dos selos</h4><p>Quem vigia o que está enterrado em Azora, e o terror de que se abram. O precedente é aterrorizante, porque foram as próprias irmãs Holmes que libertaram Connor.</p>
+<h4>A fé de Xóchitl</h4><p>Os ritos antigos de sol e sangue que não se dobram ao império. Uma tensão religiosa que o poder da Verdânia contém, mas não apaga.</p>
+<h4>Wessália em declínio</h4><p>O reino velho e frio do sul, ressentido da hegemonia tropical, vendo sua era passar enquanto o norte floresce.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Arkunia · conflitos</summary>
+      <div class="lore-body">
+<h4>O jugo colonial de Eurona</h4><p>As casas reais euronesas controlam regiões inteiras de Arkunia e drenam seus recursos, do petróleo da Eltengard aos frutos da Nectarë. Onde há colônia há resistência.</p>
+<h4>As tribos contra as coroas</h4><p>Os povos livres, como o oásis da tribo da lua, contra os Estados-fantoche e as empresas que exploram a terra. A luta de quem quer permanecer livre num mundo que quer tudo cercado e vendido.</p>
+<h4>O sagrado contra o comercial</h4><p>O berço da aura é, ao mesmo tempo, uma mina de recursos. Em Kemhet vive a tensão entre rezar no chão onde o Nen nasceu e escavar esse mesmo chão por lucro.</p>
+<h4>O tráfico</h4><p>Escravistas como Arven Dhal predam as tribos arkunianas. O lado mais sujo da exploração colonial, gente virando mercadoria no continente que deu ao mundo o seu maior dom.</p>
+<h4>A rivalidade interna</h4><p>Kemhet, Oyaba e Zundara disputam quem lideraria uma Arkunia livre. A desunião entre os próprios arkunianos é o que mantém Eurona no poder.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Eurona · conflitos</summary>
+      <div class="lore-body">
+<h4>O império colonial</h4><p>Fleuronne e as casas reais governam regiões de Arkunia de longe, e administrar colônias significa lidar com revoltas e com a raiva de um continente inteiro que não as quer.</p>
+<h4>Três coroas, um continente</h4><p>Fleuronne, Albengard e Castelvar convivem num espaço apertado, numa intriga de corte que nunca cessa. Jogos de sucessão, casamentos calculados e traições de salão.</p>
+<h4>A máfia Orsini</h4><p>O crime organizado entrelaçado com a nobreza. Quando a lei e o submundo dividem as mesmas mesas de jantar, ninguém sabe mais quem manda de verdade em Eurona.</p>
+<h4>Sangue antigo contra dinheiro novo</h4><p>As casas ancestrais contra o poder mercantil e corporativo que sobe, da Eltengard Petro à Grauve. A velha aristocracia sente o chão tremer enquanto o ouro dos negócios compra o que o brasão já não garante.</p>
+<h4>O preço de reinar sobre Arkunia</h4><p>A podridão de manter colônias e a resistência que ferve lá fora acabam desestabilizando Eurona em casa.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Oceara · conflitos</summary>
+      <div class="lore-body">
+<h4>O mercado negro de aurelianos</h4><p>O coração sombrio de Oceara. Aurelianos são sequestrados das ilhas e vendidos como a segunda mercadoria mais valiosa do mundo, perdendo apenas para as páginas do Codex Espiral. Escravistas como Arven Dhal predam essas águas atrás do prêmio máximo.</p>
+<h4>A Casa Zerethis</h4><p>O banco que guarda em silêncio a riqueza do mundo. Sua neutralidade esconde um poder que ninguém mede, porque quem controla o dinheiro de todos controla todos.</p>
+<h4>A pirataria</h4><p>As cidades-livres contra as tribos das ilhas, num mar onde a lei chega devagar e o saque chega rápido.</p>
+<h4>O segredo contra o mundo</h4><p>Oceara esconde cultos e saberes antigos e vive a tensão entre se ocultar e ser caçada por um mundo que quer justamente esses segredos.</p>
+<h4>A guerra oculta pelos aurelianos</h4><p>Nas sombras, os que protegem as comunidades aurelianas escondidas contra os que as caçam para vender. Uma cruzada silenciosa por um punhado de pessoas que valem mais do que continentes.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Antalor · conflitos</summary>
+      <div class="lore-body">
+<h4>A guerra das quatro facções</h4><p>Tööl-ken, Gore Ghasts, Abholders e Zombass numa guerra sem fim pelas ruínas de uma terra que já se partiu uma vez. O continente mais fragmentado do mundo.</p>
+<h4>Morozgrad contra todos</h4><p>O último Estado organizado, cercado pelas bandas de guerra, tentando segurar a ordem num lugar que perdeu o direito a ela.</p>
+<h4>A ameaça de Hybernis</h4><p>O frio que não é natural avança. A pergunta que ninguém quer fazer é se Antalor está virando Hybernis aos poucos, congelando de dentro para fora rumo a deixar de ser deste mundo.</p>
+<h4>O peso do muro</h4><p>As Glacies Lied se erguem justamente na fronteira de Antalor, mas ninguém sabe quem as levantou nem por quê. Elas emanam Nen e não parecem naturais, e os antalorianos convivem com o muro do mundo sem nunca terem desvendado seu segredo.</p>
+<h4>A terra que forja monstros e heróis</h4><p>Dela saiu o Novak, líder dos Black Eyed Peas, gente forjada num frio que não perdoa. O mesmo gelo que endurece um herói endurece um vilão, e Antalor deu ao mundo os dois.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Tir&#39;Vahal · o Duelo</summary>
+      <div class="lore-body">
+<h4>O Duelo de Tir'Vahal</h4><p>O ponto de contato mais tenso entre humanos e gigantes, e ele ainda vai acontecer. Será o palco onde Novak Koss, campeão da humanidade, enfrentará Draegor Yhormsdottir, neto do rei Yhorm e Representante Thamoriano, no dia 9 de dezembro de 430, na Arena Aurexis. Um duelo que vale mais do que uma luta, porque é diplomacia entre duas espécies que poderiam se aniquilar.</p>
+<h4>Não mandam embaixador, mandam campeão</h4><p>Um povo que mede tudo pela força não tem uso para diplomatas. Quando Tir'Vahal precisa falar com o mundo, envia quem sabe vencer. O cargo de Representante é dado ao mais forte que o rei está disposto a arriscar, e escolher Draegor é honra e recado ao mesmo tempo.</p>
+<h4>As regras do Duelo</h4><p>Primeiro existe um torneio humano, e quem vence recebe o título de Lutador Oficial da Humanidade. Só então esse campeão enfrenta um gigante escolhido pelos líderes de Tir'Vahal, que não disputa o título humano, apenas testa o campeão. O combate é um contra um: sem aliados, sem interferência, sem equipamento de terceiros, sem cura externa, sem substituição. Vence-se por nocaute, rendição ou incapacitação. A morte é permitida se acontecer, mas não é exigida nem vale mais.</p>
+<h4>Se o humano vence</h4><p>Passa a ser reconhecido como Campeão da Humanidade e ganha honra diante de Tir'Vahal: reconhecimento político, direito de audiência, respeito dos guerreiros, e o mais cobiçado de todos, o direito de reivindicar um favor do gigante derrotado ou de sua casa.</p>
+<h4>Ninguém sabe o que acontece se o humano perder</h4><p>As regras dizem que um campeão derrotado mantém o título do torneio. Mas isso é teoria, porque nenhum humano jamais perdeu esse duelo. A reação real dos gigantes a uma derrota nunca foi testada, e os termos foram firmados há muitos anos pelo próprio Samuel Krüger.</p>
+<h4>A arena impossível</h4><p>Hospedar um gigante de 85 metros, que vira um dragão de mais de duzentos, exigiu a Arena Aurexis numa escala que nenhuma construção humana precisou. O Égide que cerca a arena não está ali só para conter o público, está ali para conter um dragão. A arena é da Aurexis, de Celene Saint Holmes, fica em Askar, e o Égide roda no Reator Arc da Silver Dynamics. Conter um dragão dentro de uma cidade lotada é a maior aposta de engenharia que o mundo já fez.</p>
+<h4>A inteligência congelada</h4><p>Tudo o que a Trindade sabe sobre Tir'Vahal vem de apenas três relatos, e nenhum dos três pode mais ser consultado. O conhecimento sobre os gigantes está congelado no tempo, sem ninguém para confirmá-lo ou atualizá-lo.</p>
+<h4>O segredo Krüger e a ameaça reversa</h4><p>Se o fundador da Trindade foi além do muro e voltou com os Skinwalkers vivos, então a Trindade teve os meios de furar as Glacies Lied. E o muro que prende a humanidade também mantém aquilo do lado de fora: se um Roc-Abissal ou um Tyranus-Fauce cruzasse para dentro, nenhuma muralha o deteria.</p>
+<h4>A sombra da Guerra das Duas Coroas</h4><p>Os gigantes já foram arma nas mãos erradas uma vez, e essa ferida ensinou à Trindade a vigiar com atenção qualquer contato entre SATUS e Tir'Vahal. Um povo que não se pode invadir é um povo que, se cortejado, vira o mais perigoso dos aliados de quem quer que seja.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Os Aurelianos · o pecado e o comércio</summary>
+      <div class="lore-body">
+<h4>O comércio de sangue</h4><p>O aureliano é a segunda mercadoria mais valiosa do mundo, perdendo apenas para as páginas do Codex Espiral. Sequestrado, escravizado, cobiçado pelo Sangue Abençoado. Um povo inteiro reduzido a preço, caçado pelo que carrega no corpo.</p>
+<h4>Os campos</h4><p>Existem campos de concentração de aurelianos, e um deles ficava em Azora. Foi a própria Annika, a Balança de SATUS, quem os derrubou. A perseguição é institucional o bastante para erguer campos, e existem reformadores dentro da Trindade que lutam contra ela, o que significa que existem também os que a sustentam.</p>
+<h4>O pecado original da instituição</h4><p>O poder da Trindade, o Nen que define quem é elite, nasceu de comer aurelianos. A instituição que hoje regula todos os caçadores existe por causa de um canibalismo cometido pelos Chronos. Se essa verdade viesse à tona sem controle, abalaria a legitimidade de tudo.</p>
+<h4>A questão de Oceara</h4><p>Como Oceara foi fundada por aurelianos, o continente inteiro tem uma relação hostil e de pária com a Trindade. Não é birra, é memória: Oceara descende do povo que a humanidade comeu para ter poder.</p>
+<h4>A tentação biotecnológica</h4><p>Sangue que dá Nen natural e cura tudo é o sonho de qualquer corporação de biotecnologia. Para elas, um aureliano vivo deixa de ser uma pessoa e vira a matéria-prima perfeita, o que faz da proteção desse povo uma questão que a Administração não pode ignorar.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Censo dos Caçadores</summary>
+      <div class="lore-body">
+<p>SATUS abriga cerca de 6 bilhões de habitantes. Dentre eles, pouquíssimos nascem com a capacidade de um caçador, e menos ainda carregam a licença que só a Trindade concede.</p>
+<h4>A Trindade, a elite da elite</h4><p>A licença Hunter existe numa única forma, obtida só no Exame Anual da Jornada. Cerca de dois mil aspirantes enfrentam a Jornada a cada ano, e apenas dois por cento passam, cerca de quarenta novos caçadores por ano no mundo inteiro. Com a mortalidade altíssima da profissão e as aposentadorias, o total de caçadores da Trindade vivos se mantém em torno de mil a mil e duzentos, cerca de um para cada cinco a seis milhões de habitantes.</p>
+<h4>Os não-licenciados</h4><p>Cerca de quinhentos mil possuem o dom mas nenhuma licença: os que reprovaram, os objetores, as tribos de Arkunia e o oásis da tribo da lua, as facções de Antalor, a máfia Orsini, os foragidos do Livro de Recompensas e os aurelianos escondidos. A licença mede registro e lealdade à Trindade, não poder bruto.</p>
+<h4>Os braços da Trindade</h4><p>Nenhuma outra instituição licencia caçadores. O que elas fazem é organizar e empregar não-licenciados sob as regras da Trindade, com membros dela coordenando por cima. É assim que a Trindade governa o meio milhão de não-licenciados sem precisar ser esse meio milhão. Exemplos: a Guilda dos Aventureiros, em Vila Pelicano, no Castelvar, e os Caçadores da Aurexis, em Askar.</p></div>
+    </details>
+    
+  </div>
+
+  
+  <div class="section-label wrap alt"><span>Registro Ultrassecreto · Além do Muro</span></div>
+  <div class="resources wrap">
+    <section class="resource" data-minstars="4">
+      <header class="res-head"><h3>O Continente Negro e o Domínio Obscuro</h3><p class="res-note">Liberado a partir de 4★.</p><span class="res-lock" style="display:none">⚿ requer 4★</span></header>
+      <div class="res-inner">
+<h4>Os povos do Domínio Obscuro</h4><p>Fora do muro, a humanidade dos Murados não é a única, nem a mais forte. O Domínio Obscuro fervilha de povos que os seis continentes nunca imaginaram, e a Administração precisa saber com o que o mundo faz fronteira.</p>
+<h4>As Formigas Quimera</h4><p>Uma praga de insetos predadores e vorazes que se reproduzem devorando: cada criatura que consomem tem seus traços herdados pela prole. Quando começaram a comer gente, a espécie deu um salto de pesadelo, ganhando inteligência, postura ereta, a fala e o uso do Nen. Uma colônia que prova a carne humana deixa de ser praga e vira exército.</p>
+<h4>Os Feran</h4><p>Povos humanoides marcados por traços animais, cada indivíduo carregando a herança de uma fera diferente. A pelagem que cobre seus corpos é o orgulho da raça; nas fêmeas os traços são mais próximos do humano, e nos machos, mais próximos do animal falante. Vivem isolados há eras e desconfiam de tudo que anda sobre duas pernas sem pelo.</p>
+<h4>Os Aurelianos</h4><p>A raça do sangue milagroso e do Nen natural, a mesma que a humanidade caçou e comeu para roubar a aura. Muitos fugiram para além do muro há milênios, e é no Domínio Obscuro que suas maiores comunidades ainda respiram, longe dos caçadores.</p>
+<h4>Os Thamorianos</h4><p>Os gigantes de Tir'Vahal, de quarenta a cinquenta metros, que medem tudo pela força. Não são do Domínio Obscuro em si, mas partilham com ele a mesma verdade: lá fora, tudo é maior e mais antigo do que dentro do muro.</p>
+<h4>Os Umbrakin</h4><p>Um povo pálido nascido na fronteira do breu, de olhos sem cor e pele fria. Movem-se pela sombra como peixes pela água e enxergam onde não há luz. Dizem que o breu não os mata porque eles já nasceram meio dele.</p>
+<h4>Os Gólethi</h4><p>Gente de pele de pedra, das profundezas rochosas do Domínio. Lentos, imensos e pacientes, vivem séculos e falam devagar. Um Gólethi zangado é uma avalanche com nome.</p>
+<h4>Os Nerym</h4><p>Povo das águas profundas, de guelras e pele fosforescente que brilha no escuro dos abismos. Sobem à superfície raramente, e quando o fazem, é para comerciar segredos que só o fundo do mar guarda.</p>
+<h4>Os Corvane</h4><p>Um povo alado, de penas e ossos ocos, que faz ninho nos picos mais altos do Domínio. Orgulhosos e territoriais, veem o chão como lugar de bicho rasteiro e a palavra dada como dívida de sangue.</p></div>
+      <p class="res-denied" style="display:none">Conteúdo selado. Eleve sua patente para 4★ ou superior.</p>
+    </section>
+  </div>
+  
+
+  <div class="accesslog wrap"><h4>Registro de Acesso</h4><ul id="accesslist"></ul></div>
+
+  <div class="foot">Fim do registro · Classe de Administração
+    <div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a>
+    <a class="back danger" id="locknow" href="#">Encerrar sessão</a></div>
+  </div>
+</div>
+</main>
+<script src="static/js/seals.js?v=4"></script>
+<script src="static/js/site.js?v=4"></script>
+<script src="static/js/authdata.js?v=4"></script>
+<script src="static/js/auth.js?v=4"></script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conhecimento · Arquivo · Trindade</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css?v=4">
+</head>
+<body data-theme="conh">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="index.html" class="">Portal</a>
+    <a href="mundo.html" class="">Mundo</a>
+    <a href="codex.html" class="">Códex</a>
+    <a href="regras.html" class="">Regras</a>
+    <a href="cacadores.html" class="">Caçadores</a>
+    
+      <a href="conhecimento.html" class="navlink on" data-c="conh">
+        Conhecimento
+      </a>
+    
+      <a href="exploracao.html" class="navlink " data-c="expl">
+        Exploração
+      </a>
+    
+      <a href="administracao.html" class="navlink " data-c="adm">
+        Administração
+      </a>
+    
+    <a href="mestre.html" class="navlink navlink-mestre ">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>
+<script>window.CLASSE="conhecimento";</script>
+
+<!-- PORTÃO (some após a senha) -->
+<section class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="gate-seal locked" data-seal="conh" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <div class="clearance">ACESSO RESTRITO · CLASSE DE CONHECIMENTO</div>
+    <h2>Conhecimento</h2>
+    <p class="role">O coração intelectual e científico da Trindade</p>
+    <p class="gate-msg">Este arquivo é reservado aos caçadores da classe. Insira a senha fornecida pela Trindade.</p>
+    <div class="flash err" id="gateerr" role="alert"></div>
+    <form class="pwd-form" id="gateform" autocomplete="off">
+      <input type="password" id="gatepwd" placeholder="Senha da classe" aria-label="Senha da classe" required autofocus>
+      <button type="submit">Autenticar</button>
+    </form>
+    <a class="ghost-link" href="index.html">Voltar ao portal</a>
+  </div>
+</section>
+
+<!-- CONTEÚDO (revelado após a senha) -->
+<div id="classcontent" hidden>
+  <div class="classhead">
+    <div class="watermark"><svg data-seal="conh" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+    <div class="inner wrap">
+      <svg class="seal-main" data-seal="conh" viewBox="0 0 300 300" aria-label="Selo de Conhecimento"></svg>
+      <div class="clearance ok">ACESSO CONCEDIDO · CLASSE DE CONHECIMENTO</div>
+      <h2>Conhecimento</h2>
+      <p class="role">O coração intelectual e científico da Trindade</p>
+      <div class="mandate"><p>Reúne os Caçadores e Viajantes mais dedicados à busca do saber. Quem escolhe esta classe tem por missão expandir os limites do conhecimento humano, desvendando mistérios do passado, descobrindo novas tecnologias e movendo a ciência de SATUS adiante.</p></div>
+      <div class="patente-bar">
+        <span>Patente:</span>
+        <div class="stars" id="starform">
+          <button type="button" class="star" data-n="1" aria-label="1 estrelas">★</button><button type="button" class="star" data-n="2" aria-label="2 estrelas">★</button><button type="button" class="star" data-n="3" aria-label="3 estrelas">★</button><button type="button" class="star" data-n="4" aria-label="4 estrelas">★</button><button type="button" class="star" data-n="5" aria-label="5 estrelas">★</button>
+        </div>
+        <span class="patente-num">1★</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label wrap"><span>Privilégios e Regalias</span></div>
+  <div class="regs wrap">
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">1</span><span class="reg-title">Acesso à Educação de Elite</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Prioridade de entrada e redução de até 50% nas taxas das melhores universidades, laboratórios e institutos de SATUS.</li><li>Programas de intercâmbio entre continentes, principalmente Eurona, Azora e Antalor, com acesso a centros de pesquisa renomados.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">2</span><span class="reg-title">Bônus em Descobertas Científicas</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Bônus de até 45% em recompensas ou créditos por descobertas científicas significativas.</li><li>Inclui achados arqueológicos, inovações tecnológicas e avanços em biologia, química e física que beneficiem a humanidade ou a Trindade.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">3</span><span class="reg-title">Acesso Exclusivo a Registros Classificados</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Por votação no Conselho Supremo das 3 Classes, é possível requisitar registros acadêmicos e científicos confiscados ou censurados por governos e agências de SATUS.</li><li>Esses documentos incluem estudos sobre o Continente Negro, teorias proibidas sobre a origem do planeta e registros ligados às ruínas de civilizações perdidas.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">4</span><span class="reg-title">Parcerias Estratégicas com Instituições</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Instituições científicas e acadêmicas, muitas sob patrocínio da Trindade, oferecem financiamento, equipamentos e suporte logístico para expedições em busca de novas informações ou tecnologias.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">5</span><span class="reg-title">Proteção e Preservação do Conhecimento</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Papel crucial em garantir que descobertas importantes sejam preservadas e não caiam em mãos que as usem para fins destrutivos.</li><li>Algumas descobertas passam por votação no Conselho Supremo antes de serem publicadas ou compartilhadas.</li></ul></div>
+    </div>
+    
+  </div>
+
+  <div class="section-label wrap alt"><span>Recursos Privilegiados</span></div>
+  <div class="resources wrap">
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Registros Classificados</h3>
+        <p class="res-note">Requisitados ao Conselho Supremo. Alguns trechos permanecem selados.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <ul class="docs"><li class="doc "><span class="doc-t">Estudo sobre o Continente Negro</span><span class="doc-b">Dossiê sobre a terra de onde a humanidade veio, hoje território proibido além do muro.</span></li><li class="doc classif"><span class="doc-t">Teoria proibida da origem do planeta</span><span class="doc-b">Manuscrito confiscado em Antalor. Contradiz a versão oficial da fundação de SATUS.</span></li><li class="doc "><span class="doc-t">Registros das civilizações perdidas</span><span class="doc-b">Fragmentos recuperados das ruínas. Escrita ainda não decifrada por completo.</span></li></ul>
+      
+      </div>
+      
+    </section>
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Educação de Elite · Convênios Ativos</h3>
+        <p class="res-note">Redução de até 50% nas taxas.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <table class="restab"><thead><tr><th>Instituição</th><th>Continente</th><th>Benefício</th></tr></thead>
+        <tbody><tr><td>Universidade de Eurona</td><td>Eurona</td><td>−50% · prioridade</td></tr><tr><td>Instituto Azoriano de Ciências</td><td>Azora</td><td>−45% · intercâmbio</td></tr><tr><td>Laboratórios de Antalor</td><td>Antalor</td><td>−40% · pesquisa de campo</td></tr></tbody></table>
+      
+      </div>
+      
+    </section>
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Bônus por Descobertas</h3>
+        <p class="res-note">Crédito adicional sobre achados significativos.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <div class="meter"><div class="meter-fill" style="width: 45%"></div></div><p class="meter-label">até 45% em recompensas científicas</p>
+      
+      </div>
+      
+    </section>
+    
+  </div>
+
+  <div class="section-label wrap alt"><span>Arquivo do Mundo</span></div>
+  <div class="worldlore wrap">
+    
+    <details class="lore-region">
+      <summary>Askar · os povos</summary>
+      <div class="lore-body">
+<h4>Astorianos</h4><p>O povo cosmopolita de Astória e da Cidade-Eixo. Comerciantes, engenheiros e técnicos, súditos dos Silver. São a face civilizada de Askar e, por tabela, do mundo, os que dão as cartas do comércio e da tecnologia.</p>
+<h4>Filhos do Rio</h4><p>O povo de Xin-Hé, falante de Hánxu, e o mais numeroso do planeta inteiro. Uma civilização milenar dos rios e vales de taiga, de reverência aos ancestrais e disciplina de ferro. É o grão dos vales boreais deles que alimenta o mundo.</p>
+<h4>Hoshido</h4><p>O povo do mar e do aço, do arquipélago oriental. Casas marciais, código de honra e culto à lâmina. Boa parte dos maiores espadachins do mundo nasce aqui.</p>
+<h4>Nordvik</h4><p>Os nortenhos de Nordheim, rijos, baleeiros e criadores de rena, vivendo na tundra. São supersticiosos com o frio e com as muralhas que ficam perto demais de sua costa.</p>
+<h4>Vantrianos</h4><p>Os pioneiros e caçadores de Vantria, na taiga profunda. Mestiços, ariscos e independentes, são o povo que mais vive à beira do inexplorado.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Azora · os povos</summary>
+      <div class="lore-body">
+<h4>Verdanos</h4><p>O povo caloroso e diverso do maior império do mundo. Uma civilização de rios e selva do norte tropical, que governa mais terra do que qualquer outro povo do planeta. São a Verdânia, o gigante que ninguém iguala em território.</p>
+<h4>Povo de Xóchitl</h4><p>A gente dos planaltos, das pirâmides e do sol. Herança guerreira, ritos de sol e sangue, iconografia de plumas. Uma fé antiga que precede o império e nunca se curvou de todo a ele.</p>
+<h4>Eisen</h4><p>O povo do ferro e da ordem, de Eisenland. Forjas, engenharia e disciplina. É a nação industrial e marcial de Azora, o contraponto rígido ao calor expansivo da Verdânia.</p>
+<h4>Wessalianos</h4><p>O reino antigo das charnecas frias do extremo sul. Gente da névoa e do brejo, de sangue velho e orgulho melancólico, que vê o mundo esquentar e crescer ao norte enquanto o seu esfria e mingua.</p>
+<h4>Povos da selva</h4><p>Os grupos ribeirinhos e semicontactados das matas tropicais profundas do norte, que vivem onde nem o maior império do mundo pisa de verdade.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Arkunia · os povos</summary>
+      <div class="lore-body">
+<h4>Povo de Kemhet</h4><p>O povo antiquíssimo do deserto e do grande rio. São os guardiões do legado da primeira aura, sacerdotes e eruditos, porque foi na terra deles que o Nen nasceu, quando Maekar Chronos deu a carne aureliana aos primeiros homens.</p>
+<h4>Povo de Oyaba</h4><p>A civilização vibrante da mata e do mercado. Tambores, comércio e muitos povos misturados. É o coração pulsante do comércio arkuniano e a terra da Nectarë.</p>
+<h4>Povo de Zundara</h4><p>A gente da savana e das minas do sul. Mineradores, criadores e guerreiros. É deles a riqueza mineral que faz os olhos de Eurona brilharem, e por isso são os mais explorados de todos.</p>
+<h4>As Tribos</h4><p>Os muitos povos tribais de Arkunia, incluindo a tribo do oásis da tribo da lua. Nômades, próximos da aura e do espírito, vivem à margem das coroas e das corporações.</p>
+<h4>O eco aureliano</h4><p>Como a aura nasceu aqui, alguns arkunianos têm com o Nen uma proximidade que não existe em nenhum outro canto do mundo. É como se a terra ainda lembrasse do primeiro sopro.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Eurona · os povos</summary>
+      <div class="lore-body">
+<h4>Fleuronnenses</h4><p>O povo do segundo maior império. Corte, arte, refinamento e nobreza antiga. São os formadores de gosto e os diplomatas do mundo, os que ditam o que é elegante e o que é bárbaro.</p>
+<h4>Castelvaros</h4><p>O povo do sol, do vinho e das caravelas. Navegadores e conquistadores apaixonados, foram eles que velejaram e tomaram. Onde há mar e uma terra para reivindicar, um castelvaro já esteve lá primeiro.</p>
+<h4>Albengardianos</h4><p>O povo da ilha-coroa. Industriosos, mercantis, frios e calculistas. É a coroa que detém o petróleo, a Eltengard Petro, e move o mundo pela conta bancária, não pela emoção.</p>
+<h4>A nobreza como casta</h4><p>O traço que define Eurona acima de tudo é o sangue antigo. As casas reais que governam de longe, que enxergam Arkunia como propriedade e o resto do mundo como tabuleiro.</p>
+<h4>O submundo Orsini</h4><p>Por baixo da respeitável Orsini Pharmakon vivem as famílias da máfia, um povo das sombras que move dinheiro, veneno e favores. A elegância de Eurona tem um porão, e o porão tem dono.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Oceara · os povos</summary>
+      <div class="lore-body">
+<h4>Ilhéus Marani</h4><p>O povo amplo de Oceara. Navegadores, gente dos recifes, guardiões da tradição do oceano. Leem o mar como outros leem livros.</p>
+<h4>Povo de Austra</h4><p>A gente da maior ilha, de terra vermelha e costas selvagens. Rijos, do mar e do sertão insular.</p>
+<h4>Povo de Motuvai</h4><p>Os navegadores do arquipélago, de culturas de tatuagem e tradição oral. Guardiões de segredos que passam de boca em boca, nunca escritos, e por isso nunca roubados.</p>
+<h4>Gente de Zerethis Livre</h4><p>Os banqueiros e mercadores cosmopolitas. São os guardadores do dinheiro do mundo, discretos e neutros, mas donos de mais poder do que qualquer coroa admite.</p>
+<h4>Os aurelianos escondidos</h4><p>Nas ilhas mais remotas ainda sobrevivem pequenas comunidades aurelianas, a raça que nasce com o Nen. Elas se escondem porque são caçadas. Um povo que existe às escuras, porque a própria existência dele virou preço.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Antalor · os povos</summary>
+      <div class="lore-body">
+<h4>Povo de Morozgrad</h4><p>O povo do último Estado organizado de Antalor. Nortenhos rijos, sobreviventes, militarizados, forjados no frio. É a gente do Novak, e o único canto do continente onde ainda existe algo parecido com ordem.</p>
+<h4>As quatro facções da Fratura</h4><p>Onde o Estado não chega, mandam as bandas de guerra. Os Tööl-ken são os Forjadores do Gelo, sucateiros e engenheiros que constroem com os destroços. Os Gore Ghasts são os Espectros de Sangue, saqueadores brutais. Os Abholders são os Guardiões do Sepulcro, eremitas e cultistas que protegem as ruínas e os sítios de Hybernis. E os Zombass são os tocados pela morte e pelo gelo, que usam os mortos congelados da Fratura como sua força.</p>
+<h4>Os sobreviventes da Fratura</h4><p>Os antalorianos comuns, dispersos, refugiados do estilhaçamento, gente que viu o próprio chão se partir e virar o muro do mundo.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Tir&#39;Vahal · os gigantes</summary>
+      <div class="lore-body">
+<p><em>Quase nada disto é certeza. Em toda a história desde a fundação da Trindade, apenas três caçadores pisaram em Tir'Vahal e voltaram vivos: Katherine, Elizabeth e Villis. Tudo o que se acredita saber vem de três relatos. O resto é lenda, medo e dedução.</em></p>
+<h4>Os Thamorianos</h4><p>Os gigantes humanoides de Tir'Vahal, com 45 a 50 metros de altura em média. Um povo antiquíssimo, marcial e orgulhoso, para quem os humanos são pouco mais do que insetos que aprenderam a picar. É deles que a Trindade mais desconfia, porque foram os gigantes que os Chronos armaram em segredo na Guerra das Duas Coroas.</p>
+<h4>A lei da força</h4><p>Eles medem valor em castas, mas a casta não vem de riqueza, sangue ou posse. Vem de força bruta, e só dela. A força é lei. O mais fraco será sempre servo do mais forte, sem apelo e sem vergonha nisso. Não existe herança de mérito nem diplomacia que valha mais do que um punho. Um thamoriano é exatamente o que ele consegue derrotar.</p>
+<h4>O Trono de Tir'Vahal</h4><p>Ser rei é uma coisa só: derrotar quem sentava no trono. A coroa é um título de combate, tomada e defendida à força, e o reinado dura só até aparecer alguém mais forte. Desde a criação da Trindade, apenas dois gigantes sentaram nesse trono. O primeiro foi Drack. O segundo, e atual, é Yhorm Skallagrím, com seus 100 metros, que derrotou Drack e reina desde então.</p>
+<h4>O tempo dos gigantes</h4><p>O thamoriano vive até os 600 anos e só completa o desenvolvimento físico e mental aos 200. Passa os dois primeiros séculos ainda crescendo, em corpo e em mente, o que explica o Draegor, com 85 metros e ainda subindo, tratado como jovem. Reproduzem-se pouco, e essa combinação de vida longuíssima com poucos filhos faz de Tir'Vahal um reino de habitantes escassos, imensos e antiquíssimos.</p>
+<h4>Os Thamorianos Primordiais</h4><p>A exceção, e a realeza de sangue. Descendem diretamente do primeiro gigante, filho de Nezrath e Aurion, e por esse sangue primevo crescem muito além dos seus. Os maiores guardam uma segunda forma, a dracônica. Yhorm Skallagrím, com 100 metros, é o maior Primordial vivo. Draegor, seu neto, com 85 metros e ainda crescendo, em forma de dragão passa dos 200 metros de corpo e cerca de 320 metros de envergadura.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Os Aurelianos · a raça do Nen natural</summary>
+      <div class="lore-body">
+<h4>Quem são</h4><p>Um povo antiquíssimo, mais velho do que a própria aura da humanidade. Nascem com Nen natural, sem exame nem treino, e corre em suas veias o sangue milagroso, que cura e regenera. Os primeiros homens os temiam como bruxos.</p>
+<h4>A verdade que ninguém conta</h4><p>O Nen humano foi roubado deles. Cem mil anos atrás, Maekar Chronos caçou uma família aureliana, fatiou os corpos, assou a carne e a serviu a doze de seus guerreiros. Os treze que comeram despertaram a aura. Todo usuário de Nen que existe descende daquele canibalismo. Os aurelianos são a fonte do maior dom da humanidade e a sua primeira vítima.</p>
+<h4>A natureza deles</h4><p>São longevos e envelhecem devagar, e os mais divinos param de envelhecer aos vinte e cinco anos e se tornam praticamente imortais, atravessando milênios. Mas imortal não é invulnerável. Um aureliano pode ser morto, e é por isso que pode ser colhido.</p>
+<h4>O sangue dos deuses</h4><p>As linhagens mais puras descendem dos próprios Seres Antigos. A linha Reverbel, da antiga matriarca Ayshiv, nasceu da união de Liri'orial com Celestir, e a hemocinese dela, o poder de manipular o próprio sangue e o dos outros, é uma expressão pura dessa herança aureliana.</p>
+<h4>Os primeiros refugiados</h4><p>Foram os aurelianos que sentiram o PRIM despertar antes de qualquer um. Fugiram do Continente Negro milênios antes da humanidade e fundaram Oceara há cerca de vinte e oito mil anos. Quando os humanos fizeram o Êxodo, encontraram os aurelianos já lá. Oceara não é uma terra humana com aurelianos escondidos, é uma terra aureliana onde os humanos chegaram depois.</p>
+<h4>Os Murados</h4><p>Este é o nome do povo de SATUS: todos os que vivem dentro das Glacies Lied, sem distinção de raça, humanos, híbridos e aurelianos. O termo nasce do que os define, viver cercados pelo muro. Para os Antigos e para o que existe além da muralha, os Murados são o povo da jaula, os que se trancaram para sobreviver.</p></div>
+    </details>
+    
+  </div>
+
+  
+  <div class="section-label wrap alt"><span>Registro Ultrassecreto · Além do Muro</span></div>
+  <div class="resources wrap">
+    <section class="resource" data-minstars="4">
+      <header class="res-head"><h3>O Continente Negro e o Domínio Obscuro</h3><p class="res-note">Liberado a partir de 4★.</p><span class="res-lock" style="display:none">⚿ requer 4★</span></header>
+      <div class="res-inner">
+<h4>O Continente Negro</h4><p>É de lá que a humanidade veio. Antes do Êxodo, os primeiros homens viviam no Continente Negro, uma massa de terra dentro do Domínio Obscuro, e foi de lá que fugiram quando o breu começou a engolir tudo. Hoje é território proibido: a última caçadora a pisar nele e voltar viva foi um Triunvirato, e mesmo ela quase não voltou.</p>
+<h4>O Domínio Obscuro</h4><p>Fora das Glacies Lied, o mundo não acaba, apenas começa a ser grande de verdade. O que a humanidade chama de mundo é um bolsão murado; o resto do planeta, o Domínio Obscuro, é imenso, antigo e governado pelo PRIM, a ausência de onde Maalkahar estende o breu. Lá fora, o Oceano Umbral que a humanidade atravessou fugindo não passa de um lago.</p>
+<h4>O PRIM e a Maré do Breu</h4><p>O que expulsou os homens do Continente Negro foi o despertar do PRIM e o avanço do breu, a Maré que engoliu o Domínio Obscuro inteiro. As Glacies Lied não foram erguidas contra exércitos, e sim contra isso, contra a escuridão que não recua. E ninguém garante que o muro segure para sempre.</p>
+<h4>O que vive além</h4><p>As poucas criaturas trazidas de fora provam uma verdade que a Trindade prefere calar: lá fora, o Nen é selvagem, nativo de espécies inteiras, e tudo que nasce naquele lado é mais forte do que qualquer coisa criada aqui dentro. O mundo conhecido é a parte rasa. O fundo está do outro lado do gelo.</p></div>
+      <p class="res-denied" style="display:none">Conteúdo selado. Eleve sua patente para 4★ ou superior.</p>
+    </section>
+  </div>
+  
+
+  <div class="accesslog wrap"><h4>Registro de Acesso</h4><ul id="accesslist"></ul></div>
+
+  <div class="foot">Fim do registro · Classe de Conhecimento
+    <div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a>
+    <a class="back danger" id="locknow" href="#">Encerrar sessão</a></div>
+  </div>
+</div>
+</main>
+<script src="static/js/seals.js?v=4"></script>
+<script src="static/js/site.js?v=4"></script>
+<script src="static/js/authdata.js?v=4"></script>
+<script src="static/js/auth.js?v=4"></script>
+
+</body>
+</html>

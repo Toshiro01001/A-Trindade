@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% set active = c.slug %}
+{% block theme %}{{ c.tema }}{% endblock %}
+{% block title %}{{ c.nome }} · Arquivo · Trindade{% endblock %}
+{% block main %}
+<div class="classhead">
+  <div class="watermark"><svg data-seal="{{ c.seal }}" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+  <div class="inner wrap">
+    <svg class="seal-main etch" data-seal="{{ c.seal }}" viewBox="0 0 300 300" aria-label="Selo de {{ c.nome }}"></svg>
+    <div class="clearance ok">ACESSO CONCEDIDO · CLASSE DE {{ c.nome|upper }}</div>
+    <h2>{{ c.nome }}</h2>
+    <p class="role">{{ c.papel }}</p>
+    <div class="mandate"><p>{{ c.mandato|classif }}</p></div>
+    <div class="patente-bar">
+      <span>Patente:</span>
+      <form method="post" action="{{ url_for('patente') }}" class="stars" id="starform">
+        {% for n in range(1,6) %}
+        <button type="submit" name="estrelas" value="{{ n }}" class="star {{ 'lit' if n<=patente }}" aria-label="{{ n }} estrelas">★</button>
+        {% endfor %}
+      </form>
+      <span class="patente-num">{{ patente }}★</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-label wrap"><span>Privilégios e Regalias</span></div>
+<div class="regs wrap">
+  {% for titulo, itens in c.regalias %}
+  <div class="reg">
+    <button class="reg-head" aria-expanded="false">
+      <span class="reg-num">{{ loop.index }}</span>
+      <span class="reg-title">{{ titulo }}</span>
+      <span class="reg-chev">&#8250;</span>
+    </button>
+    <div class="reg-body"><ul>{% for it in itens %}<li>{{ it|classif }}</li>{% endfor %}</ul></div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="section-label wrap alt"><span>Recursos Privilegiados</span></div>
+<div class="resources wrap">
+  {% for r in c.recursos %}
+    {% set locked = r.min_stars is defined and patente < r.min_stars %}
+    <section class="resource {{ 'locked' if locked }}">
+      <header class="res-head">
+        <h3>{{ r.titulo }}</h3>
+        {% if r.nota %}<p class="res-note">{{ r.nota|classif }}</p>{% endif %}
+        {% if locked %}<span class="res-lock">⚿ requer {{ r.min_stars }}★</span>{% endif %}
+      </header>
+      {% if not locked %}
+        {% if r.kind in ['docs','council'] %}
+          <ul class="docs">
+            {% for d in r['itens'] %}
+            <li class="doc {{ 'classif' if d.classif }}">
+              <span class="doc-t">{{ d.t|classif }}</span>
+              <span class="doc-b">{{ d.b|classif }}</span>
+            </li>{% endfor %}
+          </ul>
+        {% elif r.kind == 'table' %}
+          <table class="restab">
+            <thead><tr>{% for col in r.cols %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+            <tbody>{% for row in r.rows %}<tr>{% for cell in row %}<td>{{ cell|classif }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+          </table>
+        {% elif r.kind == 'list' %}
+          <ul class="reslist">{% for it in r['itens'] %}<li>{{ it|classif }}</li>{% endfor %}</ul>
+        {% elif r.kind == 'meter' %}
+          <div class="meter"><div class="meter-fill" style="width: {{ r.valor }}%"></div></div>
+          <p class="meter-label">{{ r.rotulo }}</p>
+        {% endif %}
+      {% else %}
+        <p class="res-denied">Conteúdo selado. Eleve sua patente para {{ r.min_stars }}★ ou superior.</p>
+      {% endif %}
+    </section>
+  {% endfor %}
+</div>
+
+<div class="accesslog wrap">
+  <h4>Registro de Acesso</h4>
+  <ul>
+    {% for l in log %}<li><span class="{{ 'ok' if l.ok else 'no' }}">{{ '✔' if l.ok else '✖' }}</span> {{ l.quando }} · {{ l.evento }}</li>{% else %}<li class="muted">Nenhum registro anterior nesta sessão.</li>{% endfor %}
+  </ul>
+</div>
+
+<div class="foot">
+  Fim do registro · Classe de {{ c.nome }}
+  <div class="foot-actions">
+    <a class="back" href="{{ url_for('index') }}">Voltar ao portal</a>
+    <a class="back danger" href="{{ url_for('sair', slug=c.slug) }}">Encerrar sessão</a>
+  </div>
+</div>
+{% endblock %}

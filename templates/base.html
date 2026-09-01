@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Ecos das Ruínas · Arquivo da Trindade{% endblock %}</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-theme="{% block theme %}trindade{% endblock %}">
+<header class="topbar">
+  <a class="brand" href="{{ url_for('index') }}" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="{{ url_for('index') }}" class="{% block nav_hub %}{% endblock %}">Portal</a>
+    <a href="{{ url_for('mundo') }}" class="{% block nav_mundo %}{% endblock %}">Mundo</a>
+    <a href="codex.html" class="{% block nav_codex %}{% endblock %}">Códex</a>
+    <a href="regras.html" class="{% block nav_regras %}{% endblock %}">Regras</a>
+    <a href="cacadores.html" class="{% block nav_cac %}{% endblock %}">Caçadores</a>
+    {% for slug, cl in CLASSES.items() %}
+      <a href="{{ url_for('classe', slug=slug) }}" class="navlink {{ 'on' if active==slug }}" data-c="{{ cl.tema }}">
+        {{ cl.nome }}{% if unlocked.get(slug) %} <span class="unlock-dot" title="Desbloqueado">●</span>{% endif %}
+      </a>
+    {% endfor %}
+    <a href="mestre.html" class="navlink navlink-mestre {{ 'on' if active=='mestre' }}">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>{% block main %}{% endblock %}</main>
+<script src="{{ url_for('static', filename='js/seals.js') }}"></script>
+<script src="{{ url_for('static', filename='js/site.js') }}"></script>
+<script src="{{ url_for('static', filename='js/authdata.js') }}"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

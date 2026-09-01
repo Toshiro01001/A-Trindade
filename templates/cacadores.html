@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block nav_cac %}on{% endblock %}
+{% block title %}Registro de Caçadores · SATUS{% endblock %}
+{% block main %}
+<div class="classhead">
+  <div class="watermark"><svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+  <div class="inner wrap">
+    <svg class="seal-main etch" data-seal="trindade" viewBox="0 0 300 300" aria-label="Selo da Trindade"></svg>
+    <div class="clearance ok">REGISTRO OFICIAL · CAÇADORES DA TRINDADE</div>
+    <h2>Caçadores</h2>
+    <p class="role">Nomes e patentes registrados</p>
+  </div>
+</div>
+<div class="section-label wrap"><span>As Patentes</span></div>
+<div class="wrap"><table class="restab"><thead><tr><th>Patente</th><th>Significado</th></tr></thead>
+<tbody>{% for p,d in legenda %}<tr><td><b>{{ p }}</b></td><td>{{ d }}</td></tr>{% endfor %}</tbody></table></div>
+<div class="section-label wrap alt"><span>Registro</span></div>
+<div class="wrap"><table class="restab"><thead><tr><th>Caçador</th><th>Patente</th><th>Nota</th></tr></thead>
+<tbody>{% for nome,pat,nota in roster %}<tr><td><b>{{ nome }}</b></td><td class="pat">{{ pat }}</td><td>{{ nota }}</td></tr>{% endfor %}</tbody></table></div>
+<div class="foot">Registro público · Trindade<div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a></div></div>
+{% endblock %}
