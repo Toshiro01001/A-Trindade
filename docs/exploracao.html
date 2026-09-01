@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exploração · Arquivo · Trindade</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css?v=4">
+</head>
+<body data-theme="expl">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="index.html" class="">Portal</a>
+    <a href="mundo.html" class="">Mundo</a>
+    <a href="codex.html" class="">Códex</a>
+    <a href="regras.html" class="">Regras</a>
+    <a href="cacadores.html" class="">Caçadores</a>
+    
+      <a href="conhecimento.html" class="navlink " data-c="conh">
+        Conhecimento
+      </a>
+    
+      <a href="exploracao.html" class="navlink on" data-c="expl">
+        Exploração
+      </a>
+    
+      <a href="administracao.html" class="navlink " data-c="adm">
+        Administração
+      </a>
+    
+    <a href="mestre.html" class="navlink navlink-mestre ">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>
+<script>window.CLASSE="exploracao";</script>
+
+<!-- PORTÃO (some após a senha) -->
+<section class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="gate-seal locked" data-seal="expl" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <div class="clearance">ACESSO RESTRITO · CLASSE DE EXPLORAÇÃO</div>
+    <h2>Exploração</h2>
+    <p class="role">Os desbravadores mais corajosos de SATUS</p>
+    <p class="gate-msg">Este arquivo é reservado aos caçadores da classe. Insira a senha fornecida pela Trindade.</p>
+    <div class="flash err" id="gateerr" role="alert"></div>
+    <form class="pwd-form" id="gateform" autocomplete="off">
+      <input type="password" id="gatepwd" placeholder="Senha da classe" aria-label="Senha da classe" required autofocus>
+      <button type="submit">Autenticar</button>
+    </form>
+    <a class="ghost-link" href="index.html">Voltar ao portal</a>
+  </div>
+</section>
+
+<!-- CONTEÚDO (revelado após a senha) -->
+<div id="classcontent" hidden>
+  <div class="classhead">
+    <div class="watermark"><svg data-seal="expl" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+    <div class="inner wrap">
+      <svg class="seal-main" data-seal="expl" viewBox="0 0 300 300" aria-label="Selo de Exploração"></svg>
+      <div class="clearance ok">ACESSO CONCEDIDO · CLASSE DE EXPLORAÇÃO</div>
+      <h2>Exploração</h2>
+      <p class="role">Os desbravadores mais corajosos de SATUS</p>
+      <div class="mandate"><p>Movidos pela vontade de revelar os segredos do planeta, seus membros desafiam limites e mapeiam territórios inexplorados, trazendo à luz riquezas culturais, naturais e históricas. São a vanguarda das expedições da Trindade, frequentemente enviados a áreas de alta periculosidade, como o Domínio Obscuro, os desertos gélidos de Antalor ou as profundezas dos oceanos.</p></div>
+      <div class="patente-bar">
+        <span>Patente:</span>
+        <div class="stars" id="starform">
+          <button type="button" class="star" data-n="1" aria-label="1 estrelas">★</button><button type="button" class="star" data-n="2" aria-label="2 estrelas">★</button><button type="button" class="star" data-n="3" aria-label="3 estrelas">★</button><button type="button" class="star" data-n="4" aria-label="4 estrelas">★</button><button type="button" class="star" data-n="5" aria-label="5 estrelas">★</button>
+        </div>
+        <span class="patente-num">1★</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label wrap"><span>Privilégios e Regalias</span></div>
+  <div class="regs wrap">
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">1</span><span class="reg-title">Isenção Tributária em Relíquias e Itens Raros</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Isenção de impostos ao vender ou adquirir relíquias, artefatos e recursos raros obtidos em missões.</li><li>Maior lucratividade e incentivo ao comércio de descobertas únicas.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">2</span><span class="reg-title">Bônus ao Final de Expedições</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Bônus de até 45% em recompensas por concluir expedições patrocinadas pela Trindade ou por governos aliados.</li><li>Vale para missões de mapeamento, coleta de amostras ou recuperação de artefatos de alto valor.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">3</span><span class="reg-title">Acesso Exclusivo a Equipamentos de Alta Tecnologia</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>A Trindade fornece equipamentos de ponta: veículos para terrenos inóspitos, trajes protetores para ambientes hostis e ferramentas avançadas de escavação e análise.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">4</span><span class="reg-title">Prioridade em Missões Patrocinadas</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Prioridade nas expedições financiadas por governos ou entidades privadas, sendo os primeiros a explorar locais recém-descobertos.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">5</span><span class="reg-title">Permissão para Reivindicar Descobertas</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Direito de reivindicar partes de territórios inexplorados ou descobertas significativas, registrando-as sob seu nome: cavernas, ruínas ou fontes naturais de recursos.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">6</span><span class="reg-title">Redução em Custos de Transporte e Logística</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Descontos significativos, ou até isenção, em transporte marítimo, aéreo e terrestre para expedições autorizadas pela Trindade.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">7</span><span class="reg-title">Acesso a Mapas e Dados de Navegação Exclusivos</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Consulta a mapas detalhados e registros de expedições anteriores, muitas vezes confidenciais, com áreas inexploradas, perigos conhecidos e locais de interesse.</li></ul></div>
+    </div>
+    
+    <div class="reg">
+      <button class="reg-head" aria-expanded="false">
+        <span class="reg-num">8</span><span class="reg-title">Rede de Suporte Local</span><span class="reg-chev">&#8250;</span>
+      </button>
+      <div class="reg-body"><ul><li>Acesso a uma rede de apoio em continentes aliados durante as missões: guias experientes, tradutores e recursos médicos.</li></ul></div>
+    </div>
+    
+  </div>
+
+  <div class="section-label wrap alt"><span>Recursos Privilegiados</span></div>
+  <div class="resources wrap">
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Mapas Confidenciais · Frentes de Expedição</h3>
+        <p class="res-note">Classificação de perigo por zona.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <table class="restab"><thead><tr><th>Zona</th><th>Perigo</th><th>Status</th></tr></thead>
+        <tbody><tr><td>Cume das Glacies Lied</td><td>Extremo</td><td>Mapeamento parcial</td></tr><tr><td>Desertos gélidos de Antalor</td><td>Alto</td><td>Expedição ativa</td></tr><tr><td>Profundezas do Oceano Umbral</td><td>Extremo</td><td>Selado</td></tr><tr><td>O Domínio Obscuro</td><td>Desconhecido</td><td>Acesso negado</td></tr></tbody></table>
+      
+      </div>
+      
+    </section>
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Mercado de Relíquias · Isento de Impostos</h3>
+        <p class="res-note">Transações registradas sob patente de Exploração.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <table class="restab"><thead><tr><th>Artefato</th><th>Origem</th><th>Valor</th></tr></thead>
+        <tbody><tr><td>Fragmento de Seiva Inversa</td><td>Ruína submersa</td><td>— · isento</td></tr><tr><td>Bússola aureliana</td><td>Antalor</td><td>— · isento</td></tr><tr><td>Selo de civilização perdida</td><td>Continente Negro</td><td>— · isento</td></tr></tbody></table>
+      
+      </div>
+      
+    </section>
+    
+    <section class="resource" data-minstars="0">
+      <header class="res-head">
+        <h3>Rede de Suporte Local</h3>
+        <p class="res-note">Apoio em continentes aliados.</p>
+        
+      </header>
+      <div class="res-inner">
+      
+        <ul class="reslist"><li>Guias experientes de terreno hostil</li><li>Tradutores de dialetos regionais</li><li>Postos médicos de campo da Trindade</li></ul>
+      
+      </div>
+      
+    </section>
+    
+  </div>
+
+  <div class="section-label wrap alt"><span>Arquivo do Mundo</span></div>
+  <div class="worldlore wrap">
+    
+    <details class="lore-region">
+      <summary>Askar · o que falta explorar</summary>
+      <div class="lore-body">
+<h4>O Coração de Taiga</h4><p>O interior boreal é tão descomunal que nenhum mapa o fecha. Expedições entram e não voltam, e ali vagam bestas de Nen que ninguém catalogou. É o maior vazio no mapa de um continente habitado.</p>
+<h4>Ruínas sob a neve</h4><p>Espalhados pela taiga estão os restos soterrados de uma civilização anterior à Trindade, os fragmentos das civilizações perdidas.</p>
+<h4>As marcas geladas do norte</h4><p>Onde Askar encosta nas Glacies Lied, perto de Nordheim, o frio não é natural. É Hybernis vazando para o mundo, com ecos da cidade congelada de Qaranthul.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Azora · o que falta explorar</summary>
+      <div class="lore-body">
+<h4>A Selva do Norte</h4><p>A mata mais indomável de SATUS, densa a ponto de engolir expedições inteiras. É o verdadeiro cofre de Azora, porque é ali que o continente esconde os selos antigos.</p>
+<h4>Os sítios de selamento</h4><p>Foi numa dessas profundezas que Connor Van Hellsing ficou preso. E se um selo existiu, outros podem existir, ainda ativos, ainda segurando coisas que ninguém quer soltas.</p>
+<h4>O sul gélido</h4><p>Onde Azora encosta nas Glacies Lied, o gelo toma tudo. Terras mal pisadas, na fronteira entre o mundo conhecido e o muro.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Arkunia · o que falta explorar</summary>
+      <div class="lore-body">
+<h4>Os desertos intermináveis</h4><p>Vastos e sem mapa, e em algum ponto deles fica o sítio sagrado onde a aura despertou pela primeira vez. As ruínas da primeira aura são o Santo Graal da classe de Conhecimento, e ninguém sabe ao certo onde ficam.</p>
+<h4>As florestas profundas</h4><p>Matas exuberantes e indomadas, cheias de vida e de perigo, guardando espécies e segredos que nenhum catálogo alcançou.</p>
+<h4>As profundezas minerais</h4><p>Os sistemas de caverna que Eurona explora na superfície, mas nunca mapeou de verdade. Ninguém sabe o que dorme no fundo das minas mais ricas do mundo.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Eurona · o que falta explorar</summary>
+      <div class="lore-body">
+<p>Eurona é pequena, velha e civilizada, então quase não tem natureza selvagem. O que está por explorar não é a mata, é o que o poder enterrou de propósito.</p>
+<h4>As catacumbas e os cofres</h4><p>Sob as cidades antigas correm catacumbas, cofres lacrados e arquivos reais que ninguém deveria abrir. O segredo em Eurona mora embaixo do chão.</p>
+<h4>As criptas dos reis antigos</h4><p>As ruínas pré-Trindade sob Valmont e sob os castelos mais velhos, onde repousa o que as dinastias preferem esquecer. Explorar Eurona é arrombar uma tumba, um cofre, um arquivo proibido.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Oceara · o que falta explorar</summary>
+      <div class="lore-body">
+<h4>As ilhas sem mapa</h4><p>Oceara tem ilhas remotas e numerosas demais para caber em qualquer carta. Muitas nunca foram registradas, e é nelas que as comunidades aurelianas se escondem e que cultos antigos ainda respiram.</p>
+<h4>As ruínas submersas</h4><p>Sob o Zerethis dormem ruínas e recifes cheios de segredos afundados, um mundo inteiro debaixo d'água que ninguém mapeou.</p>
+<h4>Os interiores proibidos</h4><p>As culturas insulares mais antigas guardam interiores onde forasteiro não entra. Explorar Oceara é, muitas vezes, violar um segredo que alguém morreria para proteger.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Antalor · o que falta explorar</summary>
+      <div class="lore-body">
+<h4>Qaranthul</h4><p>A cidade congelada, descoberta só por Villis. Uma cidade morta sob o gelo, cheia de segredos e quase certamente tocada por Hybernis.</p>
+<h4>A borda estilhaçada</h4><p>A face interna das Glacies Lied, onde Antalor encontra o muro do mundo. Ninguém explorou o que ficou congelado nessa fronteira, nem o que as muralhas de Nen guardam ali.</p>
+<h4>Os vazamentos de Hybernis</h4><p>Os lugares onde a dimensão do gelo sangra para a VITAE. Aqui o frio não é clima, é invasão.</p>
+<h4>Os setenta por cento perdidos</h4><p>A maior parte de Antalor virou erma estilhaçada e não mapeada. O continente de hoje é só a fração que sobrou.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Tir&#39;Vahal · a megaflora</summary>
+      <div class="lore-body">
+<p>Florestas cujas árvores rivalizam com montanhas, samambaias mais altas que catedrais, um dossel tão denso e elevado que o chão vive em penumbra eterna.</p>
+<h4>Sequoia-Atlas</h4><p>A árvore que rivaliza com as montanhas. O tronco se espalha como falésias de rocha maciça; a copa perfura a camada de nuvens e condensa a umidade do ar em cachoeiras que escorrem por dentro do tronco. Uma única árvore abriga ecossistemas inteiros, com predadores que nunca tocam o solo.</p>
+<h4>Ciatea-Basílica</h4><p>Samambaia-açu de arquitetura gótica: as frondes se curvam em arcos e se entrelaçam em abóbadas colossais. Libera esporos do tamanho de cocos, que caem como trovões abafados, e filtra a luz num tom verde-esmeralda de vitral.</p>
+<h4>Vitória-Tectum</h4><p>A dona da folha capaz de cobrir uma casa: uma única folha tem o diâmetro de um quarteirão, sustentada por nervuras grossas como carvalhos e cobertas de espinhos do tamanho de lanças. A folha caída forma um domo rígido no chão, usado como abrigo por fauna e exploradores.</p>
+<h4>Micena-Fiel</h4><p>Fungos do tamanho de árvores frutíferas, que reinam onde plantas menores não sobrevivem. Seus chapéus emitem uma luz azulada e fantasmagórica que pulsa, atraindo polinizadores gigantes como mariposas do tamanho de águias. Crescem nas raízes da Sequoia-Atlas, servindo de postes de luz do breu florestal.</p>
+<h4>Fícus-Górgona</h4><p>A figueira-mata-pau predadora dos gigantes. Nasce nos galhos altos e lança raízes aéreas grossas como cabos de ponte, que se fundem numa malha e estrangulam a árvore hospedeira ao longo de milênios. Da hospedeira apodrecida sobra um tubo oco e colossal, esconderijo perfeito de monstros.</p>
+<h4>Nepentes-Abissal</h4><p>Planta carnívora de jarro do tamanho de silos. O topo exala um néctar bioluminescente e doce que inebria presas a quilômetros; a borda é mais escorregadia que gelo. Quem escorrega cai num lago de enzimas digestivas, numa câmara que abafa todo som.</p>
+<h4>Bambu-Estilhaço</h4><p>Colmos densos como fibra de carbono, que crescem em aglomerados-muralha. A energia acumulada nas raízes é liberada em surtos, e o som da madeira rasgando o ar lembra disparos de fuzil. Na temporada de crescimento, arremessa lascas em alta velocidade.</p>
+<h4>Bromélia-Leviatã</h4><p>Bromélias ancoradas no dossel cujo centro acumula um lago suspenso de milhões de litros, com fauna aquática, algas e predadores cegos que nunca souberam que existe chão. Em tempestades severas, o peso rompe os galhos e despeja uma cachoeira destrutiva, com tudo que vivia nela, sobre o solo.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>Tir&#39;Vahal · a megafauna</summary>
+      <div class="lore-body">
+<p>Bestas na escala dos gigantes. Para um humano, entrar em Tir'Vahal é entrar numa terra onde ele não está no topo da cadeia alimentar, está na base dela.</p>
+<h4>Braquio-Tectônico</h4><p>Saurópode maciço de mais de 60 metros, de pele cinzenta como rocha vulcânica. Cada passada das manadas compacta o solo com força de terremoto, derruba árvores e abre fendas. Alimentando-se de copas inteiras, abrem clareiras titânicas, estradas de destruição que outras feras usam para caçar. O perigo não é ser caçado, é ser esmagado sem que o animal note.</p>
+<h4>Tyranus-Fauce</h4><p>Predador bípede de 30 a 40 metros, o apex do interior. Olhos adaptados à penumbra e um órgão termossensível que detecta calor a distâncias absurdas. A mordida gera dezenas de toneladas de pressão, e os dentes serrilhados secretam enzimas que impedem a carne da presa de cicatrizar. Caça até thamorianos jovens.</p>
+<h4>Roc-Abissal</h4><p>O senhor dos céus, com asas de mais de 120 metros de ponta a ponta. Faz ninho no topo das maiores Sequoias-Atlas, acima das nuvens, e quase nunca pousa. Seus mergulhos são supersônicos, o deslocamento de ar atordoa antes do impacto, e suas garras curvas, do tamanho de troncos, arrebatam animais e veículos inteiros.</p>
+<h4>Lacerta-Miríade</h4><p>Lacraia de mais de 50 metros e centenas de segmentos, de carapaça negra com bioluminescência roxa. Move-se submersa na camada de folhas podres do chão; o único aviso é um tremor e um som de trituração. As forcípulas liberam ácido corrosivo, e o corpo segmentado sufoca e quebra a presa como uma serpente.</p>
+<h4>Gorgon-Símio</h4><p>Primata colossal de 20 metros que caça em bandos altamente organizados, comunicando-se por batidas no peito que ressoam como tambores de guerra a quilômetros. Usa o ambiente como arma: arremessa pedregulhos do tamanho de vans e troncos afiados com precisão, derrubando até criaturas aladas em voos baixos.</p>
+<h4>Leviatã-do-Breu</h4><p>Crocodiliano anfíbio de mais de 45 metros, senhor dos rios escuros. Passa semanas em letargia disfarçado de barranco; quando bota, o deslocamento de água cria uma onda de choque que arranca árvores. Não mastiga: afoga e desmembra, e o giro da morte de um monstro desse tamanho vira redemoinhos de lama e sangue.</p>
+<h4>Aracnídeo-Tepui</h4><p>Aranha da faixa intermediária, com 30 metros de envergadura de pernas e cerdas urticantes que funcionam como lanças envenenadas. Suas teias não são redes, são cabos de tensão horizontais grossos como os de uma ponte, translúcidos na penumbra. Ao sentir a vibração, ela desce em silêncio absoluto para envelopar a presa em seda.</p>
+<h4>Rinoceronte-Baluarte</h4><p>Herbívoro encouraçado de 25 metros, com chifre de queratina como uma perfuratriz e cauda em clava de espigões. Evoluiu para resistir às garras do Tyranus-Fauce, com placas que repelem lacerações. De visão péssima, confia no olfato e na audição; se assustado, engata uma investida cega e atravessa a floresta em linha reta, triturando tudo.</p>
+<h4>Canis vargaryn nivarius</h4><p>Lobos nativos das ilhas de Tir'Vahal, com a capacidade inata de aprender, desenvolver e manipular Nen. Não são humanos nem aurelianos: são lobos que nascem com o dom.</p>
+<h4>Cervoceros aberrans · os Skinwalkers</h4><p>Megafauna anômala do Continente Negro e das ilhas de Sanguine Hollow, que percebe e desenvolve Nen sem treino, de formas imprevisíveis. Chegaram a SATUS no ano 5 depois da Trindade, trazidos pela expedição de Samuel Krüger. Os indivíduos nascidos dentro de SATUS são mais fracos, no corpo e na energia, do que os do Continente Negro.</p>
+<h4>O Nen selvagem</h4><p>Dois animais desmentem o que a humanidade acredita. Dentro de SATUS, o Nen é dádiva aureliana. Do lado de fora do muro, o Nen é selvagem, nativo, de espécies inteiras. E como os Skinwalkers nascidos aqui são mais fracos, não é só o Nen que é mais forte lá fora, é tudo. O bolsão murado é a parte rasa do planeta.</p></div>
+    </details>
+    
+    <details class="lore-region">
+      <summary>A Ilha dos Antigos</summary>
+      <div class="lore-body">
+<p>Não é uma ilha pequena. Tem o exato tamanho de Askar, uma massa continental que fica além das Glacies Lied, na imensidão do planeta. Quase todas as coisas ali carregam aura de Nen, o que a torna um lugar quase alienígena para os Murados. É o mundo inteiro vivo de aura, onde pisar já é respirar Nen.</p>
+<h4>A comunhão com os Antigos</h4><p>É lá que se pode comungar, e até se fundir, com os Seres Antigos. Foi na Ilha dos Antigos que Kael fundiu a própria alma com Arhyssa, a deusa da benevolência, e deixou de ser humano para se tornar aureliano. Um lugar de transformação e de perigo absoluto: poucos o encontram, e menos ainda voltam sendo quem entraram.</p>
+<h4>As ruínas do primeiro povo</h4><p>Do Continente Negro à própria Ilha dos Antigos jazem os restos da civilização aureliana, anterior à humana. Ler essas ruínas é ler o capítulo do mundo que veio antes do nosso.</p></div>
+    </details>
+    
+  </div>
+
+  
+  <div class="section-label wrap alt"><span>Registro Ultrassecreto · Além do Muro</span></div>
+  <div class="resources wrap">
+    <section class="resource" data-minstars="4">
+      <header class="res-head"><h3>O Continente Negro e o Domínio Obscuro</h3><p class="res-note">Liberado a partir de 4★.</p><span class="res-lock" style="display:none">⚿ requer 4★</span></header>
+      <div class="res-inner">
+<h4>O Domínio Obscuro, a terra dos milagres</h4><p>Fora das Glacies Lied, ao mesmo tempo em que o breu domina, o Domínio Obscuro é um lugar de milagres inexplicáveis, que fascinam até os estudiosos mais céticos. Ninguém que os viu de perto voltou pobre, e quase ninguém voltou.</p>
+<h4>O Fruto da Eternidade</h4><p>Uma fruta raríssima cuja ingestão pode conceder juventude eterna a quem sobreviver ao impacto de sua energia avassaladora. A maioria não sobrevive, e é por isso que os pouquíssimos que a provaram atravessam os séculos.</p>
+<h4>A Pedra de Energia Infinita</h4><p>Um cristal misterioso capaz de energizar um continente inteiro, a resposta para todos os problemas energéticos de SATUS. Impérios matariam, e já mataram, só pelo rumor de uma.</p>
+<h4>A Planta Transmutadora</h4><p>Uma planta única, capaz de reorganizar as moléculas dos metais, transformando ferro em ouro e em outros materiais preciosos. Um jardim desses valeria mais do que uma coroa.</p>
+<h4>As Relíquias Históricas</h4><p>Ruínas e templos de civilizações desconhecidas estão espalhados por toda a região, guardando histórias esquecidas e segredos capazes de reescrever o passado do planeta. É o sonho, e a sentença de morte, de qualquer explorador.</p></div>
+      <p class="res-denied" style="display:none">Conteúdo selado. Eleve sua patente para 4★ ou superior.</p>
+    </section>
+  </div>
+  
+
+  <div class="accesslog wrap"><h4>Registro de Acesso</h4><ul id="accesslist"></ul></div>
+
+  <div class="foot">Fim do registro · Classe de Exploração
+    <div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a>
+    <a class="back danger" id="locknow" href="#">Encerrar sessão</a></div>
+  </div>
+</div>
+</main>
+<script src="static/js/seals.js?v=4"></script>
+<script src="static/js/site.js?v=4"></script>
+<script src="static/js/authdata.js?v=4"></script>
+<script src="static/js/auth.js?v=4"></script>
+
+</body>
+</html>

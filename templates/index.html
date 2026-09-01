@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block nav_hub %}on{% endblock %}
+{% block main %}
+<section class="hero">
+  <svg class="seal-hero etch" data-seal="trindade" viewBox="0 0 300 300" aria-label="Selo da Trindade"></svg>
+  <div class="kick">SISTEMA CENTRAL DE ARQUIVO</div>
+  <h1>Ecos das Ruínas</h1>
+  <p class="lede">{{ boasvindas }}</p>
+  <div class="gate-note">Todo acesso é registrado. Autenticação processada no servidor.</div>
+
+  <div class="doors">
+    {% for slug, cl in CLASSES.items() %}
+    <a class="door" data-c="{{ cl.tema }}" href="{{ url_for('classe', slug=slug) }}">
+      <svg class="dseal" data-seal="{{ cl.seal }}" viewBox="0 0 300 300" aria-hidden="true"></svg>
+      <h3>{{ cl.nome }}</h3>
+      <p>{{ cl.papel }}</p>
+      <span class="enter">{{ 'Entrar' if unlocked.get(slug) else 'Autenticar' }}
+        {% if unlocked.get(slug) %}<span class="unlock-dot">●</span>{% else %}<span class="lock">⚿</span>{% endif %}</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  <a class="mestre-strip" href="mestre.html">
+    <span class="ms-seal">⚿</span>
+    <span class="ms-text"><b>Arquivo do Mestre</b><small>Reservado à condução da campanha · cifrado</small></span>
+    <span class="ms-enter">Decifrar</span>
+  </a>
+</section>
+{% endblock %}

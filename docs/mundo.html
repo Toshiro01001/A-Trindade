@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Códex do Mundo · Mapa de SATUS</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css?v=4">
+</head>
+<body data-theme="trindade">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="index.html" class="">Portal</a>
+    <a href="mundo.html" class="on">Mundo</a>
+    <a href="codex.html" class="">Códex</a>
+    <a href="regras.html" class="">Regras</a>
+    <a href="cacadores.html" class="">Caçadores</a>
+    
+      <a href="conhecimento.html" class="navlink " data-c="conh">
+        Conhecimento
+      </a>
+    
+      <a href="exploracao.html" class="navlink " data-c="expl">
+        Exploração
+      </a>
+    
+      <a href="administracao.html" class="navlink " data-c="adm">
+        Administração
+      </a>
+    
+    <a href="mestre.html" class="navlink navlink-mestre ">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>
+<div class="mapapp">
+  <svg id="map" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-label="Mapa de SATUS">
+    <defs>
+      <radialGradient id="ocean" cx="50%" cy="42%" r="75%">
+        <stop offset="0%" stop-color="#123244"/><stop offset="55%" stop-color="#0c2130"/><stop offset="100%" stop-color="#06131c"/>
+      </radialGradient>
+      <filter id="soft"><feGaussianBlur stdDeviation="1.1"/></filter>
+    </defs>
+    <rect id="oceanrect" x="-800" y="-500" width="3200" height="2000" fill="url(#ocean)"/>
+    <g id="viewport"></g>
+  </svg>
+
+  <!-- barra superior: busca -->
+  <div class="map-top">
+    <div class="searchbox">
+      <span class="mag">⌕</span>
+      <input id="search" type="text" placeholder="Buscar região, país ou cidade…" aria-label="Buscar no mapa" autocomplete="off">
+      <div id="results" class="results" role="listbox"></div>
+    </div>
+    <div class="map-title">CÓDEX DO MUNDO · SATUS</div>
+  </div>
+
+  <!-- controles -->
+  <div class="map-ctrl">
+    <button id="zin" title="Aproximar" aria-label="Aproximar">+</button>
+    <button id="zout" title="Afastar" aria-label="Afastar">−</button>
+    <button id="reset" title="Visão geral" aria-label="Visão geral">⌂</button>
+  </div>
+  <div class="compass" title="Norte">
+    <svg viewBox="0 0 60 60"><g stroke="currentColor" fill="currentColor">
+      <circle cx="30" cy="30" r="26" fill="none" stroke-width="1.4" opacity=".6"/>
+      <path d="M30 6 L36 30 L30 26 L24 30 Z" fill="currentColor"/>
+      <path d="M30 54 L24 30 L30 34 L36 30 Z" fill="none" stroke-width="1"/>
+      <text x="30" y="20" text-anchor="middle" font-size="9" stroke="none">N</text>
+    </g></svg>
+  </div>
+
+  <!-- legenda -->
+  <div class="legend">
+    <div class="lg-title">Camadas</div>
+    <label><input type="checkbox" id="tgLabels" checked> Rótulos</label>
+    <label><input type="checkbox" id="tgCities" checked> Cidades</label>
+    <label><input type="checkbox" id="tgIce" checked> Glacies Lied</label>
+    <label><input type="checkbox" id="tgLocais" checked> Locais</label>
+    <div class="lg-hint">Arraste para mover · role para dar zoom · clique numa região</div>
+  </div>
+
+  <!-- painel de informações -->
+  <aside id="panel" class="panel" aria-live="polite">
+    <button id="pclose" class="pclose" aria-label="Fechar">×</button>
+    <div id="pbody"></div>
+  </aside>
+
+  <div class="coords" id="coords">SATUS · 0,0</div>
+</div>
+
+<script id="geo" type="application/json">{"regioes": [{"slug": "askar", "nome": "Askar", "ordem": 1, "tamanho": "O maior continente", "area": "45 milhões de km²", "cx": 1090, "cy": 430, "r": 250, "seed": 11, "cor": "#6f8f5a", "cor2": "#c7d3cb", "label": [1090, 300], "descricao": "O maior continente de SATUS. Sua vastidão abriga inúmeros biomas, mas é reconhecida no mundo inteiro pelas densas florestas de tundra e taiga. É a terra mais populosa do planeta e o assento do maior poder industrial de SATUS.", "linguas": ["Vaélico (língua franca do comércio mundial)", "Hánxu (língua do oriente askariano)"], "imperio": "Sede do Império Silver, na Cidade-Eixo de Lussendra.", "paises": [{"nome": "Astória", "capital": "Lussendra", "dx": 40, "dy": -10, "nota": "Potência dominante de Askar e trono da dinastia Silver."}, {"nome": "Xin-Hé", "capital": "Tianlu", "dx": 150, "dy": 90, "nota": "A nação mais populosa do mundo; terras de taiga sem fim."}, {"nome": "Hoshido", "capital": "Amagata", "dx": 220, "dy": -70, "nota": "Arquipélago oriental de tradições marciais e portos."}, {"nome": "Nordheim", "capital": "Vindholm", "dx": -120, "dy": -120, "nota": "Reino nórdico de tundra, gelo e mar frio."}, {"nome": "Vantria", "capital": "Borensk", "dx": -160, "dy": 40, "nota": "Fronteira selvagem de florestas boreais e lagos."}]}, {"slug": "azora", "nome": "Azora", "ordem": 2, "tamanho": "A segunda maior região", "area": "42 milhões de km²", "cx": 470, "cy": 560, "r": 230, "seed": 29, "cor": "#7ba35a", "cor2": "#b9c7a0", "label": [470, 430], "descricao": "Estende-se das terras mais gélidas do sul de SATUS às florestas tropicais mais quentes e úmidas do planeta, ao norte. Territórios selvagens e indomáveis, e o lar do maior império do mundo.", "linguas": ["Verdano (língua materna de Azora)"], "imperio": "Abriga o maior império do mundo: a Verdânia.", "paises": [{"nome": "Verdânia", "capital": "Solaz", "dx": 30, "dy": -40, "nota": "O maior império do mundo; selvas tropicais ao norte."}, {"nome": "Xóchitl", "capital": "Tenoch", "dx": -110, "dy": -90, "nota": "Planaltos de pirâmides e sol; herança guerreira."}, {"nome": "Eisenland", "capital": "Königstal", "dx": 120, "dy": 80, "nota": "Nação de aço e ordem, forjas e engenharia."}, {"nome": "Wessália", "capital": "Kingsmoor", "dx": -40, "dy": 140, "nota": "Reino antigo de charnecas frias no extremo sul."}]}, {"slug": "arkunia", "nome": "Arkunia", "ordem": 3, "tamanho": "A terceira maior região", "area": "30 milhões de km²", "cx": 760, "cy": 775, "r": 205, "seed": 47, "cor": "#c9a35f", "cor2": "#7d9a55", "label": [760, 900], "descricao": "Vasta e riquíssima em recursos naturais, é o berço da Aura e do Nen na humanidade. Desertos intermináveis convivem com florestas exuberantes. Parte de seus territórios é controlada por famílias reais de Eurona.", "linguas": ["Zohari (língua de Arkunia, ligada à aura)"], "imperio": "Sem império próprio unificado; regiões inteiras estão sob coroas de Eurona.", "paises": [{"nome": "Kemhet", "capital": "Ankhara", "dx": 10, "dy": -30, "nota": "Reino do deserto e do rio; onde a aura primeiro despertou."}, {"nome": "Oyaba", "capital": "Ijoro", "dx": 150, "dy": 50, "nota": "Selvas densas e mercados que fervilham de vida."}, {"nome": "Zundara", "capital": "Kaapstaat", "dx": -130, "dy": 80, "nota": "Savanas e minas ao sul; cobiçada por Eurona."}]}, {"slug": "eurona", "nome": "Eurona", "ordem": 4, "tamanho": "Pequena, porém influente", "area": "14 milhões de km²", "cx": 690, "cy": 300, "r": 118, "seed": 63, "cor": "#8a9a6a", "cor2": "#c2c8b0", "label": [690, 190], "descricao": "Não é grande em tamanho, mas é uma das regiões mais influentes de SATUS. Suas famílias reais controlam regiões inteiras em Arkunia. É o lar do segundo maior império do mundo.", "linguas": ["Vaélico (a mesma língua franca de Askar)", "Fleurês (língua nobre de Eurona)"], "imperio": "Abriga o segundo maior império do mundo: Fleuronne.", "paises": [{"nome": "Fleuronne", "capital": "Valmont", "dx": -40, "dy": -20, "nota": "O segundo maior império; corte, arte e poder."}, {"nome": "Castelvar", "capital": "Sol de Oro", "dx": 60, "dy": 40, "nota": "Reino do sol dourado, das vinhas e das caravelas."}, {"nome": "Albengard", "capital": "Eltengard", "dx": 10, "dy": -70, "nota": "Ilha-coroa; sua casa detém a Eltengard Petro."}]}, {"slug": "oceara", "nome": "Oceara", "ordem": 5, "tamanho": "Arquipélago", "area": "10 milhões de km²", "cx": 1300, "cy": 800, "r": 150, "seed": 81, "cor": "#5fa88a", "cor2": "#89c7b0", "label": [1300, 930], "ilhas": true, "descricao": "Composta por ilhas de pequeno e médio porte, ocupa boa parte do Oceano Zerethis, o menor dos três oceanos de SATUS. Rica biodiversidade e culturas que guardam segredos mais ocultos do que o conhecimento geral admite.", "linguas": ["Marani (língua das ilhas)"], "imperio": "Cidades-estado livres; a Casa Zerethis, maior banco do mundo, tem sede aqui.", "paises": [{"nome": "Austra", "capital": "Port Karrin", "dx": -30, "dy": 10, "nota": "A maior ilha; terras vermelhas e costas selvagens."}, {"nome": "Motuvai", "capital": "Vaimalu", "dx": 110, "dy": 60, "nota": "Arquipélago de segredos, recifes e navegadores."}, {"nome": "Zerethis Livre", "capital": "Porto Zerethis", "dx": 40, "dy": -80, "nota": "Cidades-banco; sede da Casa Zerethis."}]}, {"slug": "antalor", "nome": "Antalor", "ordem": 6, "tamanho": "A menor região", "area": "8,5 milhões de km²", "cx": 520, "cy": 135, "r": 108, "seed": 97, "cor": "#bcd0d8", "cor2": "#e6eef2", "label": [520, 40], "descricao": "A menor de todas as regiões. Um evento climático séculos atrás degradou mais de 70% de seu território congelado; as partes que se romperam ergueram-se como as grandes muralhas de gelo ao redor de SATUS, as Glacies Lied, sem que se possa ver o que há do outro lado. Hoje é uma terra partida, disputada por facções.", "linguas": ["Sevrán (língua do norte gelado)"], "imperio": "Sem império: quatro facções disputam suas ruínas de gelo.", "paises": [{"nome": "Morozgrad", "capital": "Volkirsk", "dx": 10, "dy": -10, "nota": "O último Estado organizado do norte."}, {"nome": "Facções da Fratura", "capital": "Qaranthul (cidade congelada)", "dx": -70, "dy": 40, "nota": "Tööl-ken, Gore Ghasts, Abholders e Zombass em guerra."}]}, {"slug": "tirvahal", "nome": "Tir'Vahal", "ordem": 7, "tamanho": "Reino dos gigantes", "area": "escala continental (além de Askar)", "alem": true, "cx": 3200, "cy": 430, "r": 300, "seed": 123, "cor": "#5c6b46", "cor2": "#8a9a6a", "label": [3200, 100], "descricao": "Não uma ilha, mas uma extensão de grandeza continental além das Glacies Lied. A terra dos gigantes Thamorianos e de sua megafauna e megaflora, onde o menor dos habitantes tem a altura de um arranha-céu. Só três caçadores voltaram vivos de lá. Fica a cerca de uma semana de barco além da Ilha dos Antigos, já nas vizinhanças do Continente Negro.", "linguas": ["A fala dos gigantes Thamorianos"], "imperio": "O trono é tomado pela força. Rei atual: Yhorm Skallagrím, 100m; Representante no Duelo: o Príncipe Draegor.", "paises": [{"nome": "Reino de Tir'Vahal", "capital": "o Trono, tomado à força", "dx": 0, "dy": -40, "nota": "Onde reina Yhorm Skallagrím, o Primordial de 100 metros."}]}, {"slug": "ilha-antigos", "nome": "Ilha dos Antigos", "ordem": 8, "tamanho": "Do tamanho de Askar", "area": "~45 milhões de km²", "alem": true, "cx": 2600, "cy": 560, "r": 250, "seed": 222, "cor": "#3f8f86", "cor2": "#8fe3d0", "label": [2600, 830], "descricao": "Uma massa continental do exato tamanho de Askar, além do muro. Quase todas as coisas ali carregam aura de Nen, o que a torna um lugar quase alienígena para os Murados. É onde se pode comungar e se fundir com os Seres Antigos. Fica a cerca de duas semanas de barco do mundo murado, perdida na imensidão do oceano além das Glacies Lied.", "linguas": ["A fala dos Antigos / aureliano"], "imperio": "Sem império humano; domínio dos Seres Antigos e berço espiritual dos aurelianos.", "paises": [{"nome": "A Terra dos Antigos", "capital": "onde Kael se fundiu a Arhyssa", "dx": 0, "dy": 0, "nota": "Poucos a acham, menos ainda voltam sendo quem entraram."}]}], "oceanos": [{"nome": "Oceano Umbral", "xy": [820, 1150], "nota": "O mais temido; leva ao Domínio Obscuro."}, {"nome": "Oceano Solmar", "xy": [220, 260], "nota": "Rota de comércio entre Azora, Eurona e Askar."}, {"nome": "Oceano Zerethis", "xy": [1360, 650], "nota": "O menor dos três; abraça Oceara."}], "locais": [{"nome": "Lussendra, a Cidade-Eixo", "x": 1130, "y": 420, "nota": "Capital de Askar e trono do Império Silver; a cidade mais movimentada do planeta."}, {"nome": "Qaranthul", "x": 470, "y": 190, "nota": "A cidade congelada de Antalor, morta sob o gelo e cheia de segredos, descoberta só por Villis."}, {"nome": "Oásis da tribo da lua", "x": 690, "y": 720, "nota": "Nos desertos de Arkunia, o lar da tribo da lua; povo livre e próximo da aura."}, {"nome": "Pentarion", "x": 720, "y": 90, "nota": "A prisão mais segura do mundo, uma fortaleza isolada no mar gelado a nordeste de Antalor."}, {"nome": "Cidade 2000", "x": 400, "y": 560, "nota": "Fora de Antalor, a cidade mais avançada tecnologicamente do mundo. Em Azora, sob arranha-céus de neon e céus de drones, crava sede as maiores corporações do planeta: Aurexis, Vörsa, Silver Dynamics, Eltengard Petro e a Casa Zerethis."}, {"nome": "Vila Pelicano", "x": 600, "y": 350, "nota": "No sul de Eurona, no país de Castelvar. Vila-polo de caçadores, sede da Guilda dos Aventureiros e lar de caçadores aposentados."}, {"nome": "Sanguine Hollow", "x": 1360, "y": 870, "nota": "Um grupo de ilhas de má fama em Oceara, de onde vêm criaturas que dominam o Nen sem treino. Poucos aportam ali por vontade própria."}]}</script>
+</main>
+<script src="static/js/seals.js?v=4"></script>
+<script src="static/js/site.js?v=4"></script>
+<script src="static/js/authdata.js?v=4"></script>
+<script src="static/js/auth.js?v=4"></script>
+
+<link rel="stylesheet" href="static/css/map.css?v=4">
+<script src="static/js/map.js?v=4"></script>
+
+</body>
+</html>
