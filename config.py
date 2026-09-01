@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get("TRINDADE_SECRET", "troque-esta-chave-secreta-do-mes
 # Senhas de acesso por classe (troque à vontade)
 SENHAS = {
     "conhecimento":  os.environ.get("SENHA_CONHECIMENTO",  "codex-espiral"),
-    "exploracao":    os.environ.get("SENHA_EXPLORACAO",    "glacies-lied"),
+    "exploracao":    os.environ.get("SENHA_EXPLORACAO",    "muralhas-gelo"),
     "administracao": os.environ.get("SENHA_ADMINISTRACAO", "conselho-supremo"),
 }
 
