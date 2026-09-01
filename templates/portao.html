@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% set active = c.slug %}
+{% block theme %}{{ c.tema }}{% endblock %}
+{% block title %}{{ c.nome }} · Acesso · Trindade{% endblock %}
+{% block main %}
+<section class="gate">
+  <div class="gate-card">
+    <svg class="gate-seal locked" data-seal="{{ c.seal }}" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <div class="clearance">ACESSO RESTRITO · CLASSE DE {{ c.nome|upper }}</div>
+    <h2>{{ c.nome }}</h2>
+    <p class="role">{{ c.papel }}</p>
+    <p class="gate-msg">Este arquivo é reservado aos caçadores da classe. Insira a senha fornecida pela Trindade.</p>
+    {% if erro %}<div class="flash err">{{ erro }}{% if tentativas>=3 %} · {{ tentativas }} tentativas registradas.{% endif %}</div>{% endif %}
+    <form class="pwd-form" method="post" action="{{ url_for('entrar', slug=c.slug) }}" autocomplete="off">
+      <input type="password" name="senha" placeholder="Senha da classe" aria-label="Senha da classe" required autofocus>
+      <button type="submit">Autenticar</button>
+    </form>
+    <a class="ghost-link" href="{{ url_for('index') }}">Voltar ao portal</a>
+  </div>
+</section>
+{% endblock %}

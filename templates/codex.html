@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block nav_codex %}on{% endblock %}
+{% block title %}Códex do Mundo · SATUS{% endblock %}
+{% block main %}
+<div class="classhead">
+  <div class="watermark"><svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+  <div class="inner wrap">
+    <svg class="seal-main etch" data-seal="trindade" viewBox="0 0 300 300" aria-label="Selo da Trindade"></svg>
+    <div class="clearance ok">ARQUIVO PÚBLICO · CÓDEX DO MUNDO</div>
+    <h2>Códex do Mundo</h2>
+    <p class="role">O que a Trindade sabe sobre SATUS</p>
+  </div>
+</div>
+<div class="worldlore wrap" style="margin-top:22px">
+  {% for e in codex %}
+  <details class="lore-region"><summary>{{ e[0] }}</summary><div class="lore-body">{{ e[1]|safe }}</div></details>
+  {% endfor %}
+</div>
+<div class="foot">Arquivo público · Trindade<div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a></div></div>
+{% endblock %}

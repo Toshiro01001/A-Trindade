@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mestre · Arquivo Reservado · Trindade</title>
+<link rel="icon" href="static/img/trindade.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css?v=4">
+</head>
+<body data-theme="mestre">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Início">
+    <svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <span><b>ECOS DAS RUÍNAS</b><small>ARQUIVO DA TRINDADE</small></span>
+  </a>
+  <nav class="nav" aria-label="Classes">
+    <a href="index.html" class="">Portal</a>
+    <a href="mundo.html" class="">Mundo</a>
+    <a href="codex.html" class="">Códex</a>
+    <a href="regras.html" class="">Regras</a>
+    <a href="cacadores.html" class="">Caçadores</a>
+    
+      <a href="conhecimento.html" class="navlink " data-c="conh">
+        Conhecimento
+      </a>
+    
+      <a href="exploracao.html" class="navlink " data-c="expl">
+        Exploração
+      </a>
+    
+      <a href="administracao.html" class="navlink " data-c="adm">
+        Administração
+      </a>
+    
+    <a href="mestre.html" class="navlink navlink-mestre on">Mestre <span class="lock-mini" aria-hidden="true">⚿</span></a>
+  </nav>
+</header>
+<main>
+
+<!-- PORTÃO (some após a decriptação) -->
+<section class="gate" id="gate">
+  <div class="gate-card mestre-card">
+    <svg class="gate-seal locked" data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg>
+    <div class="clearance">ARQUIVO DO MESTRE · CIFRADO</div>
+    <h2>Mestre</h2>
+    <p class="role">Material reservado à condução da campanha</p>
+    <p class="gate-msg">Roteiros, fichas de ameaça e mecânicas trancados por criptografia. Sem a chave do Mestre, o conteúdo é ilegível. Insira a senha para decifrar.</p>
+    <div class="flash err" id="gateerr" role="alert"></div>
+    <form class="pwd-form" id="gateform" autocomplete="off">
+      <input type="password" id="gatepwd" placeholder="Senha do Mestre" aria-label="Senha do Mestre" required autofocus>
+      <button type="submit">Decifrar</button>
+    </form>
+    <a class="ghost-link" href="index.html">Voltar ao portal</a>
+  </div>
+</section>
+
+<!-- CONTEÚDO (revelado após a decriptação; montado por mestre.js) -->
+<div id="mestrecontent" hidden>
+  <div class="classhead">
+    <div class="watermark"><svg data-seal="trindade" viewBox="0 0 300 300" aria-hidden="true"></svg></div>
+    <div class="inner wrap">
+      <svg class="seal-main" data-seal="trindade" viewBox="0 0 300 300" aria-label="Selo da Trindade"></svg>
+      <div class="clearance ok">CHAVE ACEITA · ARQUIVO DECIFRADO</div>
+      <h2>Mestre</h2>
+      <p class="role">Material reservado à condução da campanha</p>
+      <div class="mandate mestre-warn">
+        <p>Conteúdo com reviravoltas e segredos de vilão. Não exiba na frente da mesa. Ao encerrar a sessão ou recarregar, o material sai da memória e a senha é exigida de novo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="mestrelib"></div>
+
+  <div class="foot">Fim do arquivo · Reservado ao Mestre
+    <div class="foot-actions"><a class="back" href="index.html">Voltar ao portal</a>
+    <a class="back danger" id="locknow" href="#">Encerrar sessão</a></div>
+  </div>
+</div>
+</main>
+<script src="static/js/seals.js?v=4"></script>
+<script src="static/js/site.js?v=4"></script>
+<script src="static/js/authdata.js?v=4"></script>
+<script src="static/js/auth.js?v=4"></script>
+
+<script src="static/js/mestredata.js?v=4"></script>
+<script src="static/js/mestre.js?v=4"></script>
+
+</body>
+</html>
