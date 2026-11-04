@@ -12,7 +12,7 @@ import json, shutil, pathlib, os, base64, hashlib
 from markupsafe import Markup, escape
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-import config, content, world, lore, codex, regras, mestre
+import config, content, world, lore, codex, regras
 
 # Iterações do PBKDF2 (mesmo valor lido pelo navegador para reconstruir a chave)
 MESTRE_ITER = 200000
@@ -53,10 +53,20 @@ def render(tpl, out, **ctx):
     (OUT / out).write_text(html, encoding="utf-8")
     print("  gerado:", out)
 
+def mestre_disponivel():
+    """A cifra só é refeita com a senha, o manifesto privado e todos os PDFs.
+    Fora disso, o build mantém o pacote cifrado que já está publicado."""
+    if not config.SENHA_MESTRE or not pathlib.Path("mestre.py").exists():
+        return False
+    import mestre
+    return all((pathlib.Path("mestre_docs") / arq).exists()
+               for cat in mestre.CATEGORIAS for _, _, arq in cat["docs"])
+
 def build_mestre():
     """Lê os PDFs de mestre_docs/, monta um pacote JSON e o CIFRA com AES-GCM
     (chave derivada da SENHA_MESTRE por PBKDF2). Grava só o cifrado em mestredata.js.
     Sem a senha, nada do conteúdo (nem os títulos) é legível no site."""
+    import mestre
     docs_dir = pathlib.Path("mestre_docs")
     categorias, faltando = [], []
     for cat in mestre.CATEGORIAS:
@@ -96,6 +106,17 @@ def build_mestre():
     print("  cifrado: %d documento(s) do Mestre (%d KB de cifra)" % (total, len(pkg["ct"]) // 1024))
 
 def main():
+    # Pacotes já publicados: ficam como estão se faltarem as senhas ou os PDFs privados.
+    auth_arq, mestre_arq = OUT / "static/js/authdata.js", OUT / "static/js/mestredata.js"
+    auth_atual = auth_arq.read_bytes() if auth_arq.exists() else None
+    mestre_atual = mestre_arq.read_bytes() if mestre_arq.exists() else None
+    tem_senhas = all(config.SENHAS.values())
+    tem_mestre = mestre_disponivel()
+    if not tem_senhas and auth_atual is None:
+        raise SystemExit("Defina SENHA_CONHECIMENTO, SENHA_EXPLORACAO e SENHA_ADMINISTRACAO.")
+    if not tem_mestre and mestre_atual is None:
+        raise SystemExit("Defina SENHA_MESTRE e coloque mestre.py e mestre_docs/ na raiz do projeto.")
+
     if OUT.exists(): shutil.rmtree(OUT)
     (OUT / "static").mkdir(parents=True)
     shutil.copytree("static", OUT / "static", dirs_exist_ok=True)
@@ -103,12 +124,19 @@ def main():
         shutil.copytree("img", OUT / "img", dirs_exist_ok=True)
 
     # authdata.js com as senhas em hash (não em texto)
-    auth = {slug: hstr(pw) for slug, pw in config.SENHAS.items()}
-    (OUT / "static/js/authdata.js").write_text(
-        "window.SATUS_AUTH=" + json.dumps(auth) + ";", encoding="utf-8")
+    if tem_senhas:
+        auth = {slug: hstr(pw) for slug, pw in config.SENHAS.items()}
+        auth_arq.write_text("window.SATUS_AUTH=" + json.dumps(auth) + ";", encoding="utf-8")
+    else:
+        auth_arq.write_bytes(auth_atual)
+        print("  mantido: authdata.js (senhas das classes não definidas)")
 
     # pacote cifrado da aba do Mestre
-    build_mestre()
+    if tem_mestre:
+        build_mestre()
+    else:
+        mestre_arq.write_bytes(mestre_atual)
+        print("  mantido: mestredata.js (senha do Mestre ou arquivos privados ausentes)")
 
     print("Gerando site estático em ./docs")
     render("index.html", "index.html", boasvindas=codex.BOASVINDAS)

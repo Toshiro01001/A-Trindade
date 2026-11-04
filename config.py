@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """
 Configuração do Arquivo da Trindade.
-O MESTRE edita as senhas aqui. Cada jogador que escolher uma classe recebe a senha dela.
-Pode também sobrescrever por variáveis de ambiente (SENHA_CONHECIMENTO, etc.).
+As senhas vêm só de variáveis de ambiente (SENHA_CONHECIMENTO, SENHA_EXPLORACAO,
+SENHA_ADMINISTRACAO e SENHA_MESTRE). Nunca escreva senhas neste arquivo: o repositório é público.
 """
 import os
 
 SECRET_KEY = os.environ.get("TRINDADE_SECRET", "troque-esta-chave-secreta-do-mestre")
 
-# Senhas de acesso por classe (troque à vontade)
+# Senhas de acesso por classe (definidas nas variáveis de ambiente)
 SENHAS = {
-    "conhecimento":  os.environ.get("SENHA_CONHECIMENTO",  ""),
-    "exploracao":    os.environ.get("SENHA_EXPLORACAO",    ""),
+    "conhecimento":  os.environ.get("SENHA_CONHECIMENTO", ""),
+    "exploracao":    os.environ.get("SENHA_EXPLORACAO", ""),
     "administracao": os.environ.get("SENHA_ADMINISTRACAO", ""),
 }
 

@@ -1,0 +1,1 @@
+window.SATUS_AUTH={"conhecimento": "b4416e76", "exploracao": "c729a0b6", "administracao": "274ab7ef"};

@@ -1,0 +1,6 @@
+# Material privado do Mestre: fica só no computador
+mestre_docs/
+mestre.py
+senhas*.txt
+.env
+__pycache__/
