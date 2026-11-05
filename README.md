@@ -47,3 +47,7 @@ Um comando, e o arquivo inteiro renasce atualizado.
 
 <p align="center"><b>SATUS não é um cenário. É um lugar onde a sua mesa vai morar.</b></p>
 <p align="center"><i>Ecos das Ruínas · Arquivo da Trindade</i></p>
+
+---
+
+Desenvolvido por Rodrigo Terroso Junior. O Claude, da Anthropic, foi usado como ferramenta durante o desenvolvimento.
