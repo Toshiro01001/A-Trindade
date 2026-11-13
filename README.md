@@ -4,7 +4,7 @@
 <p align="center">
   <img alt="Offline" src="https://img.shields.io/badge/abre%20e%20funciona-offline-111">
   <img alt="Estático" src="https://img.shields.io/badge/sem%20servidor-100%25%20est%C3%A1tico-B41717">
-  <img alt="Cifrado" src="https://img.shields.io/badge/aba%20do%20Mestre-AES--GCM-2E7D32">
+  <img alt="Cifrado" src="https://img.shields.io/badge/classes%20e%20Mestre-AES--GCM-2E7D32">
   <img alt="RPG" src="https://img.shields.io/badge/HxH%205e-SATUS-C9A227">
 </p>
 
@@ -18,7 +18,7 @@ Esqueça o calhamaço de PDFs soltos e a pasta bagunçada no Drive. **Ecos das R
 
 🗺️ **O mapa de SATUS, ao vivo.** Oito regiões, três oceanos, línguas, impérios e países. Um mundo inteiro dentro das Glacies Lied, pronto para o jogador passear e se perder.
 
-🔐 **Três portas, três classes.** Conhecimento, Exploração e Administração. Cada uma guarda mandato, regalias e lore próprios atrás de uma senha. O jogador entra na dele e encontra só o que a sua classe deveria saber. Os segredos das outras continuam segredos.
+🔐 **Três portas, três classes.** Conhecimento, Exploração e Administração. Cada uma guarda mandato, regalias e lore próprios atrás de uma senha. O conteúdo de cada classe fica cifrado de verdade (AES-GCM, com a senha abrindo a chave da classe): sem a senha certa, nem quem abre o código-fonte lê a lore das outras. O jogador entra na sua e encontra só o que a classe deveria saber.
 
 🕯️ **O cofre do Mestre.** A aba mais perigosa do site. Roteiros de sessão, fichas de ameaça, o bestiário do Breu e as mecânicas que sustentam o mundo. Tudo cifrado de verdade, com AES-GCM. Sem a senha do Mestre, nem os títulos aparecem: é ruído puro no arquivo. O jogador curioso que abrir o código-fonte não leva nada.
 
